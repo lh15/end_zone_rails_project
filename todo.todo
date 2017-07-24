@@ -31,7 +31,7 @@ Models
   ✔ SubCategory @done (7/24/2017, 12:03:25 PM)
     ☐ sub_category 
 
-  ☐ EventsPerformer
+  ✔ EventsPerformer @done (7/24/2017, 1:39:18 PM)
     ☐ performer(ref)
     ☐ event(ref)
 
@@ -48,5 +48,18 @@ Models
     ☐ date_purchased
 
 
-  ☐ Set Up model methods
+  ☐ Set Up model methods TODO:
+    ☐ phone number validations
     ☐ 
+
+  ☐ Login/Registration (mike)
+    ☐ 
+
+  ☐ Tickets Controller (jessica)
+    ☐ 
+
+  ☐ Events Controller
+    ☐ populate data
+
+  ☐ routes
+    

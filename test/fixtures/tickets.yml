@@ -3,19 +3,19 @@
 one:
   price: 1.5
   seat_number: 1
-  venue: one
+  event: one
   section: MyString
   seller_id: one
   buyer_id: one
-  date_purchased: 2017-07-24 12:09:18
+  date_purchased: 2017-07-24 13:26:03
   sold: false
 
 two:
   price: 1.5
   seat_number: 1
-  venue: two
+  event: two
   section: MyString
   seller_id: two
   buyer_id: two
-  date_purchased: 2017-07-24 12:09:18
+  date_purchased: 2017-07-24 13:26:03
   sold: false
