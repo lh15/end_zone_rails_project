@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   post '/users/login' => 'users#authenticate'
 
-  get '/users/:id' => 'users#show' #show users upcoming events
+  get '/users/show' => 'users#show' #show users upcoming events
+  
 
   # *************************************************************
   # event routes
@@ -23,10 +24,10 @@ Rails.application.routes.draw do
   # *************************************************************
   # ticket routes
   # *************************************************************
-
-  # /events/:id/tickets post to create ticket
-  # /events/:id/tickets/buy  ----  post to sell ticket
-  # /events/:id/tickets/     destroy
+  
+  post '/events/:id/tickets' => 'tickets#create'
+  post '/events/:event_id/tickets/:ticket_id/buy' => 'tickets#buy'
+  delete '/events/:event_id/tickets/:ticket_id' => 'tickets#destroy'
   # 
 
 
