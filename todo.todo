@@ -1,0 +1,52 @@
+Models
+  ✔ User @done (7/24/2017, 11:46:44 AM)
+    ☐ first_name
+    ☐ last_name
+    ☐ email
+    ☐ password(digest)
+    ☐ address
+    ☐ phone_number
+    ☐ (has_many: events?, tickets_purchased, tickets_selling, tickets_sold)
+  
+  ✔ Event (populate from api) @done (7/24/2017, 12:03:15 PM)
+    ☐ title
+    ☐ date
+    ☐ description
+    ☐ venue (references)
+    ☐ has_many(tickets)
+    ☐ category/type (references)
+    ☐ timezone? 
+
+  ✔ Venue @done (7/24/2017, 12:03:19 PM)
+    ☐ name
+    ☐ imageurl
+    ☐ city
+    ☐ state
+    ☐ country
+
+  ✔ Performer @done (7/24/2017, 12:03:21 PM)
+    ☐ name
+    ☐ sub_category(ref)
+
+  ✔ SubCategory @done (7/24/2017, 12:03:25 PM)
+    ☐ sub_category 
+
+  ☐ EventsPerformer
+    ☐ performer(ref)
+    ☐ event(ref)
+
+  ✔ Category @done (7/24/2017, 12:03:38 PM)
+    ☐ category (concert, sports event...)
+
+  ✔ Ticket @done (7/24/2017, 1:15:52 PM)
+    ☐ price
+    ☐ seat_number
+    ☐ venue(references) 
+    ☐ section
+    ☐ seller_id (references)
+    ☐ buyer_id (references)
+    ☐ date_purchased
+
+
+  ☐ Set Up model methods
+    ☐ 

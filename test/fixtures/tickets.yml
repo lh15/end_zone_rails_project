@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 1.5
+  seat_number: 1
+  venue: one
+  section: MyString
+  seller_id: one
+  buyer_id: one
+  date_purchased: 2017-07-24 12:09:18
+  sold: false
+
+two:
+  price: 1.5
+  seat_number: 1
+  venue: two
+  section: MyString
+  seller_id: two
+  buyer_id: two
+  date_purchased: 2017-07-24 12:09:18
+  sold: false
