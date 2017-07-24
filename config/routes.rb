@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  
   # *************************************************************
   # users routes
   # *************************************************************
   get '/users/login' => 'users#new' #show login page
+  get '/success' => 'users#show' #showing a success page to check if login/reg works
 
   post '/users' => 'users#create'
 
