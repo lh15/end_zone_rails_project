@@ -1,0 +1,15 @@
+<h1><%= @event.title %></h1><br>
+
+<h2>Sell Tickets</h2>
+<form action="/events/<%= @event.id %>/tickets" method="POST">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
+    <label>Price:</label>
+    <input type="number" name="ticket[price]"><br>
+    <label>Seat Number:</label>
+    <input type="number" name="ticket[seat_number]"><br>
+    <label>Section:</label>
+    <input type="text" name="ticket[section]"><br>
+    <button type="submit">Sell Ticket</button>
+</form>    
+
+

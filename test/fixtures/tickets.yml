@@ -5,9 +5,9 @@ one:
   seat_number: 1
   event: one
   section: MyString
-  seller_id: one
-  buyer_id: one
-  date_purchased: 2017-07-24 13:26:03
+  seller: one
+  buyer: one
+  date_purchased: 2017-07-24 16:59:31
   sold: false
 
 two:
@@ -15,7 +15,7 @@ two:
   seat_number: 1
   event: two
   section: MyString
-  seller_id: two
-  buyer_id: two
-  date_purchased: 2017-07-24 13:26:03
+  seller: two
+  buyer: two
+  date_purchased: 2017-07-24 16:59:31
   sold: false

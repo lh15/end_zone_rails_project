@@ -13,7 +13,6 @@ class TicketsController < ApplicationController
     def buy
         user = User.find(session[:user_id])
         ticket = Ticket.find(params[:ticket_id])
-        event = Event.find(params[:event_id])
         ticket.update(buyer_id: user, date_purchased: DateTime.now, sold:true)
         redirect_to "/users/show"
     end 
@@ -25,6 +24,6 @@ class TicketsController < ApplicationController
     end     
     private
         def ticket_params
-            params.require(:ticket).permit(:price, :seat_number, :section).merge(seller_id: user.id, event_id: event.id, sold: false)  
+            params.require(:ticket).permit(:price, :seat_number, :section).merge(seller: @logged_in_user, event: Event.find(params[:id]), sold: false)  
         end          
 end

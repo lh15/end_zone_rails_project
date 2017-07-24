@@ -5,8 +5,8 @@ class CreateTickets < ActiveRecord::Migration[5.1]
       t.integer :seat_number
       t.references :event, foreign_key: true
       t.string :section
-      t.references :seller_id
-      t.references :buyer_id
+      t.references :seller
+      t.references :buyer
       t.datetime :date_purchased
       t.boolean :sold
 
