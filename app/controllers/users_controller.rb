@@ -26,6 +26,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(session[:user_id])
+  end
+
   def logout
     reset_session
     redirect_to '/users/login'
