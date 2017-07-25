@@ -1,3 +1,67 @@
+************
+USER STORIES
+************
+
+☐ log/reg (mike)
+  ☐ validations
+    ☐ basic validations (presence, uniqueness, email)
+    ☐ phone number
+    ☐ password regex
+    ☐ validations appear properly in view 
+  ☐ redirects
+    ☐ landing page is events. (make root route)
+    ☐ if !logggedin what can't the user do??
+      ☐ view buy ticket form, must be logggedin. (redirect to proper event? session?)
+      ☐ sell ticket (add ticket)
+      ☐ view user profile (if they click my hub, redirect to login)
+      ☐ 
+
+
+☐ search events with search bar (placeholder will say search by all those things, but the query will only search event title)
+
+☐ View events
+  ☐ by default, by location. can change location
+  ☐ can also view by date
+
+
+☐ dropdown on top left where users can see categories and main cities
+
+☐ list tickets
+  ☐ attributes for tickets
+
+☐ buy tickets 
+  ☐ by zone, section, or list
+  ☐ by price range
+
+☐ filter available tickets - by price, value, best seats, amount
+  ☐ lower priority
+
+☐ seat map for each venue
+  ☐ static?
+  ☐ dynamic but minimalistic?
+  ☐ crazy idea (puzzle)
+
+
+☐ remove tickets
+  ☐ only ticket seller can
+
+☐ checkout
+  ☐ redirects to new page where ticket gets appended to new page (session?)(this way, if user comes back to page, tickets are still in cart) 
+  ☐ once bought, clear session 
+
+
+☐ activity history
+  ☐ in user/my hub
+  ☐ very similar to shoe store. table diplays bought and sold tickets
+
+
+☐ profile details
+  ☐ in my hub
+
+
+☐ Add image url to performer 
+
+
 Models
   ✔ User @done (7/24/2017, 11:46:44 AM)
     ☐ first_name
