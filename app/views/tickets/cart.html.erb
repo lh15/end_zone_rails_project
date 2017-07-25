@@ -1,18 +1,18 @@
-<a href="/events">Back to events</a>
+<a href="/events">Back to Events</a>
 <% session[:cart].each do |item| %>
     <% @tickets << Ticket.find(item) %>
 <% end %>
-<h3>Items in your cart(<%= @tickets.count %>):</h3>
+<h3>Items in your cart (<%= @tickets.count %>):</h3>
 <ul style="list-style:none">    
 <% @tickets.each do |ticket| %>
     <li> 
-        <a href="/tickets/<%= ticket.id %>/remove" data-method="POST">Remove</a>
         <% @total += ticket.price %>       
         <% event = Event.find(ticket.event_id) %>
-        <%= event.title %><br>
-        <%= event.date.strftime("%m/%d/%y") %><br>
-        Seat: <%= ticket.seat_number %> <%= ticket.section %><br>
-        $<%= '%.2f' % ticket.price %><br>
+        Event: <%= event.title %><br>
+        Date of Event: <%= event.date.strftime("%m/%d/%y") %><br>
+        Seat: <%= ticket.seat_number %> Section: <%= ticket.section %><br>
+        Price: $<%= '%.2f' % ticket.price %><br>
+        <a href="/tickets/<%= ticket.id %>/remove" data-method="POST">Remove</a>
     </li>    
 <% end %>
 </ul>
