@@ -5,8 +5,19 @@
 <% end %>
   <br><br>
 <form action="/users" method="post">
-<h1>Sign up with EndZone</h1>
+<h1>Sign up and make it happen </h1>
 <br>
+<a href="http://www.facebook.com"><div id="facebook">
+  <img id="facebooklogo" src="https://s-media-cache-ak0.pinimg.com/736x/3f/40/7d/3f407dc965335257705ea112bb3a32ce--energy-use-a-program.jpg"><p> Sign up with facebook </p>
+</div>
+</a>
+<br>
+<br>
+OR
+<br>
+<br>
+<p> Sign up with stubhub </p>
+
 <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
 
 <input type="text" name="user[first_name]"  placeholder="First name"><br><hr>
@@ -28,9 +39,9 @@
 <input type="password" name="user[password_confirmation]"  placeholder="Confirm Password"><br>
 
 <hr>
-<input type="checkbox"> Sign me up for updates
+<input type="checkbox"> Send me emails about upcoming events 
 <br><br>
-<input type="submit">
+<input id="signupbutton" type="submit">
 </form>
 <br>
 
@@ -43,5 +54,5 @@
 <input type="text" name="user[email]"><br><hr>
 <label>Password</label><br>
 <input type="password" name="user[password]"><br><br>
-<input type="submit">
+<input id="signupbutton" type="submit">
 </form>
