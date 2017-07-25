@@ -6,13 +6,13 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: <%= '%.2f' % @amount.to_i %></span>
+      <span>Amount: $<%= '%.2f' % @amount.to_i %></span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Look at you! Having money, going places!"
+          data-description="Look at you! Spending money!"
           data-amount="<%= @amount.to_i*100 %>"
           data-locale="auto"></script>
 <% end %>
