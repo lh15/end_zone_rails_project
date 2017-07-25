@@ -2,8 +2,12 @@
 <h1>Upcoming events </h1>
 <ul>
 <% @events.each do |event| %>
+<<<<<<< HEAD
     <li>
         <a href="/events/<%= event.id %>"><%= event.title %></a>
     </li>
+=======
+    <a href="/events/<%= event.id %>"><%= event.title %></a><br><br>
+>>>>>>> e78d3e5753546e2001454432bca6807f5f359e41
 <% end %>
 </ul>
