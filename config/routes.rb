@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   post '/events/:event_id/tickets/:ticket_id/buy' => 'tickets#buy'
   post '/tickets/:ticket_id/remove' => 'tickets#remove'
   delete '/events/:event_id/tickets/:ticket_id' => 'tickets#destroy'
+
+  resources :charges
   # 
 
 
