@@ -1,4 +1,21 @@
-<h1><%= @event.title %></h1><br>
+<h1><%= @event.title %></h1>
+<h3><%= @event.date.strftime("%A, %B %d, %Y") %></h3>
+<h3><%= @event.venue.name %></h3>
+
+<h2>Tickets</h2>
+<ul>
+<form action="/events/<%= @event.id %>/tickets/cart" method="POST">  
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">  
+    <% @tickets.each do |ticket| %>
+        <li>
+            Seat:<%= ticket.seat_number %><%= ticket.section %><br>
+            $<%= '%.2f' % ticket.price %><br>
+            <a href="/events/<%= @event.id %>/tickets/<%= ticket.id %>">Select</a>
+        </li>
+    <% end %>
+    <button type="submit">Add to Cart</button>
+</form>    
+</ul>
 
 <h2>Sell Tickets</h2>
 <form action="/events/<%= @event.id %>/tickets" method="POST">
