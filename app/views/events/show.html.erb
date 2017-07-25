@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <h1><%= @event.title %></h1>
 <h3><%= @event.date.strftime("%A, %B %d, %Y") %></h3>
 <h3><%= @event.venue.name %></h3>
@@ -11,7 +10,7 @@
         <li>
             Seat:<%= ticket.seat_number %><%= ticket.section %><br>
             $<%= '%.2f' % ticket.price %><br>
-            <a href="/events/<%= @event.id %>/tickets/<%= ticket.id %>">Select</a>
+            <input type="checkbox" name="selected_ticket[]" value="<%= ticket.id %>"> Select
         </li>
     <% end %>
     <button type="submit">Add to Cart</button>

@@ -16,6 +16,19 @@ class TicketsController < ApplicationController
         ticket.update(buyer_id: user, date_purchased: DateTime.now, sold:true)
         redirect_to "/users/show"
     end 
+    def add 
+        event = Event.find(params[:id])
+        if session[:cart].nil?
+            session[:cart] = []
+        end    
+        session[:cart] += params[:selected_ticket]
+        redirect_to '/cart'
+    end
+
+    def cart
+        @tickets = [] 
+        render 'cart'
+    end     
     
     def destroy
         ticket = Ticket.find(params[:ticket_id])

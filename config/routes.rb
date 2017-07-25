@@ -26,8 +26,9 @@ Rails.application.routes.draw do
   # *************************************************************
   # ticket routes
   # *************************************************************
-  
 
+  get '/cart' => 'tickets#cart'
+  post '/events/:id/tickets/cart' => 'tickets#add'
   post '/events/:id/tickets' => 'tickets#create'
   post '/events/:event_id/tickets/:ticket_id/buy' => 'tickets#buy'
   delete '/events/:event_id/tickets/:ticket_id' => 'tickets#destroy'

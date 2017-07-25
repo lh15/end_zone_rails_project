@@ -1,0 +1,11 @@
+<% session[:cart].each do |item| %>
+    <% @tickets << Ticket.find(item) %>
+<% end %>
+<h3>Items in your cart(<%= @tickets.count %>):
+<% @tickets.each do |ticket| %>
+    <li>        
+        <% event = Event.find(ticket.event_id) %>
+        <%= event.title %>
+        <%= ticket.seat_number %>
+    </li>    
+<% end %>
