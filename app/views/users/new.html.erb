@@ -56,7 +56,7 @@ OR
 <br>
 
 <form action="/users/login" method="post" id="login">
-<h1>Have an account with EndZone? <span style="color:blue"> Sign in </span> </h1>
+<h1>Have an account with EndZone? <span style="color: rgb(66, 103, 178)"> Sign in </span> </h1>
 <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
 <label>Email</label><br>
 <input type="text" name="user[email]"><br><hr>
@@ -64,3 +64,5 @@ OR
 <input type="password" name="user[password]"><br><br>
 <input id="signupbutton" type="submit" value="Sign in">
 </form>
+<br>
+<a id="tag" href=""> Forgot your password? </a>
