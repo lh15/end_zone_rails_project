@@ -4,10 +4,10 @@ class TicketsController < ApplicationController
         event = Event.find(params[:id])
         ticket = Ticket.new(ticket_params)
         if ticket.save
-            redirect_to "/users/show"
+            redirect_to "/events/#{ event.id }"
         else
             flash[:errors] = ticket.errors.full_messages    
-            redirect_to "/events/#{ event.id }/tickets"
+            redirect_to "/events/#{ event.id }"
         end 
     end
     def buy

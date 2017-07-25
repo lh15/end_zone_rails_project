@@ -1,4 +1,9 @@
+<a href="/success">My Profile</a>
 <h1>Upcoming events </h1>
+<ul>
 <% @events.each do |event| %>
-    <a href="/events/<%= event.id %>"><%= event.title %></a><br><br>
+    <li>
+        <a href="/events/<%= event.id %>"><%= event.title %></a>
+    </li>
 <% end %>
+</ul>
