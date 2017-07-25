@@ -9,27 +9,27 @@
 <br>
 <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
 
-<input type="text" name="user[first_name]"  placeholder="First name"><br><br><hr>
+<input type="text" name="user[first_name]"  placeholder="First name"><br><hr>
 
-<input type="text" name="user[last_name]" placeholder="Last name"><br><br><hr>
+<input type="text" name="user[last_name]" placeholder="Last name"><br><hr>
 
-<input type="text" name="user[address]"  placeholder="Address"><br><br><hr>
+<input type="text" name="user[address]"  placeholder="Address"><br><hr>
 
-<input type="text" name="user[phone_number]"  placeholder="Phone Number"><br><br><hr>
+<input type="text" name="user[phone_number]"  placeholder="Phone Number"><br><hr>
 
 <input type="email" name="user[email]"  placeholder="Email"><br>
-<p> Email is case sensitive. </p>
+
 <hr>
 
 <input type="password" name="user[password]"  placeholder="Password"><br>
-<p> Password must be no less than 2 characters and no more than 15 characters. </p>
+
 <hr>
 
 <input type="password" name="user[password_confirmation]"  placeholder="Confirm Password"><br>
-<p> Passwords must match. </p>
+
 <hr>
 <input type="checkbox"> Sign me up for updates
-<br><br><hr>
+<br><br>
 <input type="submit">
 </form>
 <br>
@@ -37,11 +37,10 @@
 
 
 <form action="/users/login" method="post" id="login">
-<h1>Have an account with EndZone? <u style="color:blue"> Sign in </u> </h1>
+<h1>Have an account with EndZone? <span style="color:blue"> Sign in </span> </h1>
 <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
 <label>Email</label><br>
-<input type="text" name="user[email]"><br>
-<p> Email is case sensitive. </p>
+<input type="text" name="user[email]"><br><hr>
 <label>Password</label><br>
 <input type="password" name="user[password]"><br><br>
 <input type="submit">
