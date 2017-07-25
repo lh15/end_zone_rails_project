@@ -22,13 +22,23 @@ class TicketsController < ApplicationController
             session[:cart] = []
         end    
         session[:cart] += params[:selected_ticket]
+        tickets = Ticket.where(id: params[:selected_ticket])
+        tickets.update_all(sold:true)
         redirect_to '/cart'
     end
 
     def cart
+        @total = 0
         @tickets = [] 
         render 'cart'
-    end     
+    end   
+    
+    def remove
+        ticket = Ticket.find(params[:ticket_id])
+        ticket.update(sold:false)
+        session[:cart].delete(params[:ticket_id])
+        redirect_to'/cart'
+    end    
     
     def destroy
         ticket = Ticket.find(params[:ticket_id])

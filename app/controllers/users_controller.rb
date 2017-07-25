@@ -31,6 +31,8 @@ class UsersController < ApplicationController
   end
 
   def logout
+    tickets = Ticket.where(id: session[:cart])
+    tickets.update_all(sold:false)
     reset_session
     redirect_to '/users/login'
   end

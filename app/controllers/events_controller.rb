@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     
     def show
         @event = Event.find(params[:id])
-        @tickets = Ticket.where(event_id:params[:id])
+        @tickets = Ticket.where(event_id:params[:id], sold:false)
         render 'show'
     end     
 
