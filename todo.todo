@@ -4,10 +4,10 @@ USER STORIES
 
 ☐ log/reg (mike)
   ☐ validations
-    ☐ basic validations (presence, uniqueness, email)
-    ☐ phone number
-    ☐ password regex
-    ☐ validations appear properly in view 
+    ✔ basic validations (presence, uniqueness, email) @done (7/25/2017, 12:43:41 PM)
+    ✔ phone number @done (7/25/2017, 12:43:38 PM)
+    ✔ password regex @done (7/25/2017, 12:43:36 PM)
+    ☐ validations appear properly in view
   ☐ redirects
     ☐ landing page is events. (make root route)
     ☐ if !logggedin what can't the user do??
