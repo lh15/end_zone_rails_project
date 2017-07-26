@@ -11,13 +11,45 @@
 </div>
 
 <div id="purchases">
-    <h3>Recent Purchases</h3>
+    <h3>Purchase History</h3>
     <ul style="list-style:none">
+    <% if !!@purchases %>
     <% @purchases.each do |purchase| %>
         <li>
-            <%= purchase.title %>
+            <%= purchase.event.title %><br>
+            <%= purchase.event.date.strftime("%m/%d/%y") %><br>
+            <%= purchase.event.venue.name %><br>
+            (purchased on <%= purchase.date_purchased.strftime("%m/%d/%y") %>)
         </li>    
-    <% end %>        
+    <% end %>  
+    </ul>  
+    <% else %>
+        <p>No purchases yet!</p>
+    <% end %>
+</div>
+
+<div id="listings">
+    <h3>My Listings</h3>
+    <ul style="list-style:none">
+    <% if !!@listings %>
+    <% @listings.each do |listing| %>
+        <li>
+            <%= listing.event.title %><br>
+            <%= listing.event.date.strftime("%m/%d/%y") %><br>
+            <%= listing.event.venue.name %><br>
+            <% if listing.sold == true %>
+                Status: sold (on <%= listing.date_purchased.strftime("%m/%d/%y") %>)
+            <% else %>
+                Status: for sale<br>
+                <a href='/tickets/<%= listing.id %>' data-method='delete'>Delete this listing</a><br>
+            <% end %>       
+        </li><br>  
+    <% end %>  
+    </ul>  
+    <% else %>
+        <p>No tickets for sale yet!</p>
+    <% end %>
+</div>
 
 
 
