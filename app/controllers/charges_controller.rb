@@ -1,11 +1,24 @@
 class ChargesController < ApplicationController
      def new
         @amount = params[:total]
+        @user = User.find(session[:user_id])
     end
 
     def create
      # Amount in cents
+     @amount = 0
+     tickets = []
+    session[:cart].each do |item|
+        tickets << Ticket.find(item)
+    end
     
+    tickets.each do |ticket|
+        @amount += ticket.price
+        user = User.find(session[:user_id])
+        ticket.update(buyer_id: user, date_purchased: DateTime.now)  
+    end  
+
+    session[:cart] = []
 
     customer = Stripe::Customer.create(
         :email => params[:stripeEmail],
@@ -14,7 +27,7 @@ class ChargesController < ApplicationController
 
      charge = Stripe::Charge.create(
         :customer    => customer.id,
-        :amount      => @amount,
+        :amount      => @amount.to_i,
         :description => 'Rails Stripe customer',
         :currency    => 'usd'
     )

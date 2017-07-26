@@ -1,73 +1,121 @@
 <% if flash[:errors] %>
   <% flash[:errors].each do |error| %>
-    <p style="color:red;"><%= error %></p>
-  <% end %>
-<% end %>
-  <br><br>
-<form action="/users" method="post">
-<h1>Sign up, Pay up, Get out </h1>
-<br>
-<a href="http://www.facebook.com"><div id="facebook">
-  <img id="facebooklogo" src="https://s-media-cache-ak0.pinimg.com/736x/3f/40/7d/3f407dc965335257705ea112bb3a32ce--energy-use-a-program.jpg"><p> Sign up with facebook </p>
-</div>
-</a>
-<br>
-<br>
-OR
-<br>
-<br>
-<p> Sign up with EndZone! </p>
+    <p style="color:red; font-size: 12px;">
+      <%= error %>
+    </p>
+    <% end %>
+      <% end %>
+        <br><br>
+          <h3>Sign up, Pay up, Get out </h3>
+          <br>
+          <a href="http://www.facebook.com">
+            <div id="facebook">
+              <p><img id="facebooklogo" src="https://s-media-cache-ak0.pinimg.com/736x/3f/40/7d/3f407dc965335257705ea112bb3a32ce--energy-use-a-program.jpg">                Sign up with facebook
+              </p>
+            </div>
+          </a>
+          <br>
+          <br> OR
+          <br>
+          <br>
+          <h5> Sign up with EndZone! </h5>
 
-<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
+          <div class="row">
+            <form class="col s12" action="/users" method="post">
+              <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="first_name" name="user[first_name]" type="text" class="validate">
+                  <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="last_name" type="text" name="user[last_name]" class="validate">
+                  <label for="last_name">Last Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="address" type="text" name="user[address]" class="validate">
+                  <label for="address">Address</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="phonenumber" type="text" name="user[phone_number]" class="validate">
+                  <label for="phonenumber">Phone Number</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" class="validate">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" class="validate">
+                  <label for="password">Password</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="confirmpassword" type="password" name="user[password_confirmation]" class="validate">
+                  <label for="confirmpassword">Confirm Password</label>
+                </div>
+              </div>
+              <p>
+                <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                <label for="filled-in-box">Send me emails about upcoming events</label>
+              </p>
+              <br>
+              <input id="signupbutton" type="submit" value="Sign Up">
+            </form>
+          </div>
 
-<input type="text" name="user[first_name]"  placeholder="First name"><br><hr>
-
-<input type="text" name="user[last_name]" placeholder="Last name"><br><hr>
-
-<input type="text" name="user[address]"  placeholder="Address"><br><hr>
-
-<input type="text" name="user[phone_number]"  placeholder="Phone Number"><br><hr>
-
-<input type="email" name="user[email]"  placeholder="Email"><br>
-
-<hr>
-
-<input type="password" name="user[password]"  placeholder="Password"><br>
-
-<hr>
-
-<input type="password" name="user[password_confirmation]"  placeholder="Confirm Password"><br>
-
-<hr>
-<input id="checkbox" type="checkbox"> Send me emails about upcoming events 
-<br><br>
-<input id="signupbutton" type="submit" value="Sign up">
-</form>
-<br>
-<p> By signing up, you agree to our <span style="color: rgb(66, 103, 178)"> user agreement </span> and <span style="color: rgb(66, 103, 178)"> privacy notice</span>. </p>
-<br><br><br><br>
+          <br>
+          <p> By signing up, you agree to our <span style="color: rgb(66, 103, 178)"> user agreement </span> and <span style="color: rgb(66, 103, 178)"> privacy notice</span>.
+          </p>
+          <br><br>
+          <h5>Have an account with EndZone? <span style="color: rgb(66, 103, 178)"> Sign in </span> </h5>
+          <br><br>
 
 
+          <h3> Get seats you'll hate, anytime </h3>
+
+          <br>
+          <a href="http://www.facebook.com">
+            <div id="facebook">
+              <p> <img id="facebooklogo" src="https://s-media-cache-ak0.pinimg.com/736x/3f/40/7d/3f407dc965335257705ea112bb3a32ce--energy-use-a-program.jpg">                Sign in with Facebook
+              </p>
+            </div>
+          </a>
+
+          <br>
+          <br> OR
+          <br>
+          <br>
 
 
-<a href="http://www.facebook.com"><div id="facebook">
-  <img id="facebooklogo" src="https://s-media-cache-ak0.pinimg.com/736x/3f/40/7d/3f407dc965335257705ea112bb3a32ce--energy-use-a-program.jpg"><p> Sign in with Facebook </p>
-</div></a>
+          
+          <form action="/users/login" method="post" id="login">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" name="user[email]" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" name="user[password]" class="validate">
+                <label for="password">Password</label>
+              </div>
+            </div>
+            <input id="signupbutton" type="submit" value="Sign in">
+          </form>
+          <br>
+          <a id="tag" href=""> Forgot your password? </a>
 
-<br>
-<br>
-OR
-<br>
-<br>
-
-<form action="/users/login" method="post" id="login">
-<h1>Have an account with EndZone? <span style="color: rgb(66, 103, 178)"> Sign in </span> </h1>
-<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
-<label>Email</label><br>
-<input type="text" name="user[email]"><br><hr>
-<label>Password</label><br>
-<input type="password" name="user[password]"><br><br>
-<input id="signupbutton" type="submit" value="Sign in">
-</form>
-<br>
-<a id="tag" href=""> Forgot your password? </a>
+          <br><br>
+          <h5>New to EndZone? <span style="color: rgb(66, 103, 178)"> Sign Up </span> </h5>
+          
