@@ -22,6 +22,8 @@
 }
 nav {
 background-color: #260354;
+height: 100px;
+
 }  
 * {
     font-family: 'PT Sans', sans-serif;
@@ -53,4 +55,23 @@ background-color: #260354;
 #tag {
     color: rgb(66, 103, 178);
 }
+.divider{
+    background-color: #CFEB34;
+}
+#dropdown1{
+    background-color: #00A1A1;
+    color: white;
+}
+#dropdown2{
+    background-color: #00A1A1;
+    color: white;
+}
+#dropdown3{
+    background-color: #00A1A1;
+    color: white;
+}
+.logo {
+    width: 30px;
+}
+
 
