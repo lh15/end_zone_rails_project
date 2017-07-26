@@ -28,6 +28,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
+    @purchases = Ticket.where(buyer_id:@user)
+    @listings = Ticket.where(seller_id:@user)
   end
 
   def logout
