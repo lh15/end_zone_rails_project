@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>EndZone</title>
-    <%= csrf_meta_tags %>
+
+<head>
+  <title>EndZone</title>
+  <%= csrf_meta_tags %>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="style.css" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,21 +13,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
-  </head>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <div class="section content">
-    <% if logged_in? %>
-      <a href="/users/logout">Log Out</a>
+</head>
+
+<body>
+  <div>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </ul>
+    <ul id="dropdown2" class="dropdown-content">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </ul>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">EndZone</a>
+        <ul class="right hide-on-med-and-down">
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Find events<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Sign in<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <% if logged_in? %>
+    <a href="/users/logout">Log Out</a>
     <% else %>
       <a href="/users/login">Log In</a>
-    <% end %>
-    <br>
-  
-    <%= yield %>
+      <% end %>
+        <br>
 
-    </div>
-  </body>
+        <%= yield %>
+
+</body>
+
 </html>

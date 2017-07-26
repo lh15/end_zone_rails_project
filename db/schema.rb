@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724215931) do
+ActiveRecord::Schema.define(version: 20170726155754) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170724215931) do
     t.integer "sub_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "img_url"
     t.index ["sub_category_id"], name: "index_performers_on_sub_category_id"
   end
 

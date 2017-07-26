@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     lat_lon = "#{params['lat']},#{params['lon']}"
     response = Geocoder.search(lat_lon).first
     puts response.state if response.present?
-    @events = Event.includes(:venue).where('venues.state = ?', "IL").references(:venue)
+    @events = Event.includes(:venue).where('venues.state = ?', "NY").references(:venue)
     puts @events.inspect
     render html: @events.inspect
   end
@@ -19,4 +19,6 @@ class EventsController < ApplicationController
         @tickets = Ticket.where(event_id:params[:id], sold:false)
         render 'show'
     end     
-end
+end      
+
+
