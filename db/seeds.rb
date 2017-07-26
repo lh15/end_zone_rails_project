@@ -45,7 +45,7 @@ subcategory2 = SubCategory.create(sub_category:"DubStep")
 performer3 = Performer.create(name:"Mr Miller's Seventh Grade Band", sub_category_id: 2, img_url: "www.google.com")
 performer4 = Performer.create(name:"Hans Zimmer", sub_category_id: 2, img_url: "www.google.com")
 
-
+ticket2 = Ticket.create(price:"40.00", seat_number:"1", section:"A", event_id: 2, seller_id: 1, sold: false)
 
 events_performer3 = EventsPerformer.create(performer_id: 3, event_id: 2)
 events_performer4 = EventsPerformer.create(performer_id: 4, event_id: 2)
@@ -63,7 +63,7 @@ subcategory3 = SubCategory.create(sub_category:"Comedy")
 performer5 = Performer.create(name:"Tom Servo", sub_category_id: 3, img_url: "www.google.com")
 performer6 = Performer.create(name:"Crow T Robot", sub_category_id: 3, img_url: "www.google.com")
 
-
+ticket3 = Ticket.create(price:"40.00", seat_number:"1", section:"A", event_id: 3, seller_id: 1, sold: false)
 
 events_performer5 = EventsPerformer.create(performer_id: 5, event_id: 3)
 events_performer6 = EventsPerformer.create(performer_id: 6, event_id: 3)
@@ -76,6 +76,8 @@ subcategory4 = SubCategory.create(sub_category:"Death Metal for Kidz")
 
 performer7 = Performer.create(name:"Raffi Cavoukian", sub_category_id: 4, img_url: "www.google.com")
 
+ticket4 = Ticket.create(price:"40.00", seat_number:"1", section:"A", event_id: 4, seller_id: 1, sold: false)
+
 events_performer7 = EventsPerformer.create(performer_id: 7, event_id: 4)
 
 #--------------------------------------------------------------------------------------------
@@ -86,6 +88,8 @@ subcategory5 = SubCategory.create(sub_category:"Musical/Theater")
 performer8 = Performer.create(name:"Betty White", sub_category_id: 4, img_url: "www.google.com")
 performer9 = Performer.create(name:"Justin Timberlake", sub_category_id: 4, img_url: "www.google.com")
 performer10 = Performer.create(name:"Forrest Whittaker", sub_category_id: 4, img_url: "www.google.com")
+
+ticket5 = Ticket.create(price:"40.00", seat_number:"1", section:"A", event_id: 5, seller_id: 1, sold: false)
 
 events_performer8 = EventsPerformer.create(performer_id: 8, event_id: 5)
 events_performer9 = EventsPerformer.create(performer_id: 9, event_id: 5)
@@ -98,6 +102,8 @@ subcategory5 = SubCategory.create(sub_category:"CalvinBall")
 
 performer11 = Performer.create(name:"The Bay City Rollers", sub_category_id: 1, img_url: "www.google.com")
 performer12 = Performer.create(name:"Manitoba Mandibles", sub_category_id: 1, img_url: "www.google.com")
+
+ticket6 = Ticket.create(price:"40.00", seat_number:"1", section:"A", event_id: 6, seller_id: 1, sold: false)
 
 events_performer11 = EventsPerformer.create(performer_id: 11, event_id: 6)
 events_performer12 = EventsPerformer.create(performer_id: 12, event_id: 6)
