@@ -22,6 +22,8 @@
 }
 nav {
 background-color: #260354;
+height: 100px;
+
 }  
 * {
     font-family: 'PT Sans', sans-serif;
@@ -32,7 +34,8 @@ background-color: #260354;
     width: 250px;
     height: 65px;
     text-align: center;
-    padding: 5px;
+    font-size: 17px;
+    padding: 1px;
     margin: 20px;
     display: inline-block;
     align-content: center;
@@ -52,4 +55,36 @@ background-color: #260354;
 #tag {
     color: rgb(66, 103, 178);
 }
+.divider{
+    background-color: #CFEB34;
+}
+#dropdown1{
+    background-color: #00A1A1;
+    color: white;
+}
+#dropdown2{
+    background-color: #00A1A1;
+    color: white;
+}
+#dropdown3{
+    background-color: #00A1A1 !important;
+    color: white !important;
+}
+.logo {
+    width: 100px;
+    transform: rotate(25deg);
+    margin-left: 24px;
+}
+.dropdown-content li>a, .dropdown-content li>span {
+
+    color: white;
+
+}
+.dropdown-button {
+    margin-top: 20px;
+}
+.dropdown-buttonevents {
+    margin-top:20px;
+}
+
 

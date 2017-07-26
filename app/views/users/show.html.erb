@@ -1,8 +1,23 @@
+<a href="/events">View Events</a><br>
 <h1> Hi <%= @user.first_name %> </h1>
 
-<p> Full Name: <%= @user.first_name %> <%= @user.last_name %> </p>
-<p> Address: <%= @user.address %> </p>
-<p> Phone: <%= @user.phone_number %> </p>
-<p> E-Mail: <%= @user.email %> </p>
 
-<a href="/events">View Events</a>
+<div id="info">
+    <h3>Basic Info</h3>
+    <p> Full Name: <%= @user.first_name %> <%= @user.last_name %> </p>
+    <p> Address: <%= @user.address %> </p>
+    <p> Phone: <%= @user.phone_number %> </p>
+    <p> E-Mail: <%= @user.email %> </p>
+</div>
+
+<div id="purchases">
+    <h3>Recent Purchases</h3>
+    <ul style="list-style:none">
+    <% @purchases.each do |purchase| %>
+        <li>
+            <%= purchase.title %>
+        </li>    
+    <% end %>        
+
+
+

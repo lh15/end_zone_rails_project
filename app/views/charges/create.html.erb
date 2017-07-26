@@ -1,4 +1,20 @@
+<a href="/logout">Logout</a> |  <a href="/events">View Events</a> |  <a href="/users/show">My Profile</a>
+
 <h1>Purchase successful!</h1>
 <h2>Details:</h2>
-<h3>Total: <%= @amount %><br>
-    
+<p>Total: $<%= '%.2f' % @amount %></p><br>
+    <% num = 1 %>
+    <ul style="list-style:none">
+    <% @tickets.each do |ticket| %>
+        <% event = Event.find(ticket.event_id) %>
+        <li>       
+       <p> <%= num %> of <%= @tickets.count %><br><br>
+        Event: <%= event.title %><br>
+        Date: <%= event.date.strftime("%m/%d/%y") %><br>
+        Seat: <%= ticket.seat_number %> Section: <%= ticket.section %><br>
+        Price: $<%= '%.2f' % ticket.price %></p> 
+        </li>    
+        <% num += 1 %>
+    <% end %>
+    </ul>
+
