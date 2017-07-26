@@ -27,6 +27,7 @@ height: 100px;
 }  
 * {
     font-family: 'PT Sans', sans-serif;
+    
 }
 #facebook{
     background-color: rgb(66, 103, 178);
@@ -89,4 +90,16 @@ height: 100px;
 nav .brand-logo {
 
     height: 20px;
+}
+h1{
+    font-size: 2em;
+  }
+
+
+#dropdown1, #dropdown2, #dropdown3 {
+  top: 70px !important;
+}
+#login{
+  width: 40%;
+  margin: 0px auto;
 }

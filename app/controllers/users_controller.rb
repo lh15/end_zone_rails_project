@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     tickets = Ticket.where(id: session[:cart])
     tickets.update_all(sold:false)
     reset_session
-    redirect_to '/users/login'
+    redirect_to '/events'
   end
 
   private
