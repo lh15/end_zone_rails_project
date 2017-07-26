@@ -16,7 +16,7 @@
 
 category1 = Category.create(category: "Sports")
 
-venue1 = Venue.create(name: "U.S. Cellular Field", img_url: "http://www.ballparksofbaseball.com/wp-content/uploads/2016/03/uscell_topv2.jpg", city: "Chicago", state: "IL", country: "USA")
+venue1 = Venue.create(name: "Guaranteed Rate Field", img_url: "http://www.ballparksofbaseball.com/wp-content/uploads/2016/03/uscell_topv2.jpg", city: "Chicago", state: "IL", country: "USA")
 
 event1 = Event.create(title: "Cubs @ Sox", date:Date.parse('31-7-2017'), description: "Baseball game", venue_id: 1, category_id: 1)
 
@@ -66,3 +66,36 @@ performer6 = Performer.create(name:"Dave Chappelle", sub_category_id: 3)
 events_performer5 = EventsPerformer.create(performer_id: 5, event_id: 3)
 events_performer6 = EventsPerformer.create(performer_id: 6, event_id: 3)
 
+#--------------------------------------------------------------------------------------------
+
+event4 = Event.create(title: "Banana Phone: Realm of Chaos Tour", date:Date.parse('01-8-2017'), description: "Come and see the triumphant return of the DEATH METAL Banana Phone!", venue_id: 2, category_id: 2)
+
+subcategory4 = SubCategory.create(sub_category:"Death Metal for Kidz")
+
+performer7 = Performer.create(name:"Raffi Cavoukian", sub_category_id: 4)
+
+events_performer7 = EventsPerformer.create(performer_id: 7, event_id: 4)
+
+#--------------------------------------------------------------------------------------------
+event5 = Event.create(title: "Election 2016: The Musical", date:Date.parse('01-8-2017'), description: "Nominated for zero Tony awards! Make sure to see it quick, opening night might also be closing night!", venue_id: 3, category_id: 3)
+
+subcategory5 = SubCategory.create(sub_category:"Musical/Theater")
+
+performer8 = Performer.create(name:"Betty White", sub_category_id: 4)
+performer9 = Performer.create(name:"Justin Timberlake", sub_category_id: 4)
+performer10 = Performer.create(name:"Forrest Whittaker", sub_category_id: 4)
+
+events_performer8 = EventsPerformer.create(performer_id: 8, event_id: 5)
+events_performer9 = EventsPerformer.create(performer_id: 9, event_id: 5)
+events_performer10 = EventsPerformer.create(performer_id: 10, event_id: 5)
+
+#--------------------------------------------------------------------------------------------
+event6 = Event.create(title: "Calvinball 2017 World Championship", date:Date.parse('01-8-2017'), description: "Championship of the worlds greatest no-rules game!", venue_id: 1, category_id: 1)
+
+subcategory5 = SubCategory.create(sub_category:"CalvinBall")
+
+performer11 = Performer.create(name:"The Bay City Rollers", sub_category_id: 1)
+performer12 = Performer.create(name:"Manitoba Mandibles", sub_category_id: 1)
+
+events_performer11 = EventsPerformer.create(performer_id: 11, event_id: 6)
+events_performer12 = EventsPerformer.create(performer_id: 12, event_id: 6)
