@@ -1,4 +1,23 @@
 <h1>Upcoming events </h1>
+<%# <%= @city.inspect || @ip.inspect %>
+
+
+<div id="loadingDiv" class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+       
+    </div>
+<div id="display_events">
+
+</div>
 <% @events.each do |event| %>
     <a href="/events/<%= event.id %>"><%= event.title %></a>
 <% end %>

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # *************************************************************
   # event routes
   # *************************************************************
-
+  get '/events/location' => 'events#get_location'
   get '/events' => 'events#index'   #show events (by location, this is the landing page) i e root route
   get '/events/:id' => 'events#show'     #show single event and its tickets 
   #  

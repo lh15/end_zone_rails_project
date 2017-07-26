@@ -2,12 +2,12 @@
 USER STORIES
 ************
 
-☐ log/reg (mike)
-  ☐ validations
-    ☐ basic validations (presence, uniqueness, email)
-    ☐ phone number
-    ☐ password regex
-    ☐ validations appear properly in view 
+✔ log/reg (mike) @done (7/26/2017, 10:36:52 AM)
+  ✔ validations @done (7/26/2017, 10:36:54 AM)
+    ✔ basic validations (presence, uniqueness, email) @done (7/26/2017, 10:36:55 AM)
+    ✔ phone number @done (7/26/2017, 10:36:56 AM)
+    ✔ password regex @done (7/26/2017, 10:36:57 AM)
+    ✔ validations appear properly in view @done (7/26/2017, 10:36:58 AM)
   ☐ redirects
     ☐ landing page is events. (make root route)
     ☐ if !logggedin what can't the user do??
@@ -20,14 +20,15 @@ USER STORIES
 ☐ search events with search bar (placeholder will say search by all those things, but the query will only search event title)
 
 ☐ View events
-  ☐ by default, by location. can change location
+  ☐ by default, by location. can change location (events location)
   ☐ can also view by date
 
 
 ☐ dropdown on top left where users can see categories and main cities
 
 ☐ list tickets
-  ☐ attributes for tickets
+  ✔ attributes for tickets @done (7/26/2017, 10:38:37 AM)
+  ☐ validations
 
 ☐ buy tickets 
   ☐ by zone, section, or list
@@ -46,7 +47,7 @@ USER STORIES
   ☐ only ticket seller can
 
 ☐ checkout
-  ☐ redirects to new page where ticket gets appended to new page (session?)(this way, if user comes back to page, tickets are still in cart) 
+  ✔ redirects to new page where ticket gets appended to new page (session?)(this way, if user comes back to page, tickets are still in cart) @done (7/26/2017, 10:39:46 AM)
   ☐ once bought, clear session 
 
 

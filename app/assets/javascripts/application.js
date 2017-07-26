@@ -11,5 +11,10 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= jquery
 //= require turbolinks
-//= require_tree .
+//= require_tree 
+
+$(document).ready(function() {
+    $('select').material_select();
+  });
