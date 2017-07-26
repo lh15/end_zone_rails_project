@@ -17,7 +17,7 @@
         <li>
             Seat:<%= ticket.seat_number %><%= ticket.section %><br>
             $<%= '%.2f' % ticket.price %><br>
-             <input type="checkbox" id="selected_tix" name="selected_ticket[]" value="<%= ticket.id %>"/> 
+            <input type="checkbox" id="selected_tix" name="selected_ticket[]" value="<%= ticket.id %>"/> 
             <label for="selected_tix">Select</label>
             <!-- <input type="checkbox" name="selected_ticket[]" value="<%= ticket.id %>"> -->
         </li>
