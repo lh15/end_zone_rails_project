@@ -4,10 +4,10 @@ class TicketsController < ApplicationController
         event = Event.find(params[:id])
         ticket = Ticket.new(ticket_params)
         if ticket.save
-            redirect_to "/users/show"
+            redirect_to "/events/#{ event.id }"
         else
             flash[:errors] = ticket.errors.full_messages    
-            redirect_to "/events/#{ event.id }/tickets"
+            redirect_to "/events/#{ event.id }"
         end 
     end
     def buy
@@ -16,6 +16,29 @@ class TicketsController < ApplicationController
         ticket.update(buyer_id: user, date_purchased: DateTime.now, sold:true)
         redirect_to "/users/show"
     end 
+    def add 
+        event = Event.find(params[:id])
+        if session[:cart].nil?
+            session[:cart] = []
+        end    
+        session[:cart] += params[:selected_ticket]
+        tickets = Ticket.where(id: params[:selected_ticket])
+        tickets.update_all(sold:true)
+        redirect_to '/cart'
+    end
+
+    def cart
+        @total = 0
+        @tickets = [] 
+        render 'cart'
+    end   
+    
+    def remove
+        ticket = Ticket.find(params[:ticket_id])
+        ticket.update(sold:false)
+        session[:cart].delete(params[:ticket_id])
+        redirect_to'/cart'
+    end    
     
     def destroy
         ticket = Ticket.find(params[:ticket_id])

@@ -5,38 +5,69 @@
 <% end %>
   <br><br>
 <form action="/users" method="post">
-<h1>Sign up with EndZone</h1>
-<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="">
+<h1>Sign up, Pay up, Get out </h1>
+<br>
+<a href="http://www.facebook.com"><div id="facebook">
+  <img id="facebooklogo" src="https://s-media-cache-ak0.pinimg.com/736x/3f/40/7d/3f407dc965335257705ea112bb3a32ce--energy-use-a-program.jpg"><p> Sign up with facebook </p>
+</div>
+</a>
+<br>
+<br>
+OR
+<br>
+<br>
+<p> Sign up with EndZone! </p>
 
-<input type="text" name="user[first_name]" class="" placeholder="First name"><br><br>
+<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
 
-<input type="text" name="user[last_name]" class="" placeholder="Last name"><br><br>
+<input type="text" name="user[first_name]"  placeholder="First name"><br><hr>
 
-<input type="text" name="user[address]" class="" placeholder="Address"><br><br>
+<input type="text" name="user[last_name]" placeholder="Last name"><br><hr>
 
-<input type="text" name="user[phone_number]" class="" placeholder="Phone Number"><br><br>
+<input type="text" name="user[address]"  placeholder="Address"><br><hr>
 
-<input type="email" name="user[email]" class="" placeholder="Email"><br>
-<p> Email is case sensitive. </p>
+<input type="text" name="user[phone_number]"  placeholder="Phone Number"><br><hr>
 
-<input type="password" name="user[password]" class="" placeholder="Password"><br><br>
+<input type="email" name="user[email]"  placeholder="Email"><br>
 
-<input type="password" name="user[password_confirmation]" class="" placeholder="Confirm Password"><br><br>
-<input type="checkbox"> Sign me up for updates
+<hr>
+
+<input type="password" name="user[password]"  placeholder="Password"><br>
+
+<hr>
+
+<input type="password" name="user[password_confirmation]"  placeholder="Confirm Password"><br>
+
+<hr>
+<input id="checkbox" type="checkbox"> Send me emails about upcoming events 
 <br><br>
-<input type="submit" class="">
+<input id="signupbutton" type="submit" value="Sign up">
 </form>
 <br>
+<p> By signing up, you agree to our <span style="color: rgb(66, 103, 178)"> user agreement </span> and <span style="color: rgb(66, 103, 178)"> privacy notice</span>. </p>
+<br><br><br><br>
 
 
+
+
+<a href="http://www.facebook.com"><div id="facebook">
+  <img id="facebooklogo" src="https://s-media-cache-ak0.pinimg.com/736x/3f/40/7d/3f407dc965335257705ea112bb3a32ce--energy-use-a-program.jpg"><p> Sign in with Facebook </p>
+</div></a>
+
+<br>
+<br>
+OR
+<br>
+<br>
 
 <form action="/users/login" method="post" id="login">
-<h1>Have an account with EndZone? <u> Sign in </u> </h1>
-<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="">
+<h1>Have an account with EndZone? <span style="color: rgb(66, 103, 178)"> Sign in </span> </h1>
+<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
 <label>Email</label><br>
-<input type="text" name="user[email]" class=""><br>
-<p> Email is case sensitive. </p>
+<input type="text" name="user[email]"><br><hr>
 <label>Password</label><br>
-<input type="password" name="user[password]" class=""><br><br>
-<input type="submit" class="">
+<input type="password" name="user[password]"><br><br>
+<input id="signupbutton" type="submit" value="Sign in">
 </form>
+<br>
+<a id="tag" href=""> Forgot your password? </a>
