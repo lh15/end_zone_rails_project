@@ -1,0 +1,21 @@
+<h2>Edit Listing</h2>
+<a href='/tickets/<%= @ticket.id %>' data-method='delete'>Delete this listing</a><br>
+
+<form action="/tickets/<%= @ticket.id %>" method="POST">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
+  <label>Price:</label>
+  <input type="number" name="price" value="<%= '%.2f' % @ticket.price %>"<br>
+  <label>Seat Number:</label>
+  <input type="number" name="seat_number" value="<%= @ticket.seat_number %>"><br>
+  <label>Section:</label>
+  <input type="text" name="section" value="<%= @ticket.section %>"><br>
+  <button type="submit">Update Listing</button>
+</form>
+<br>
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p style="color:red; font-size: 12px;">
+      <%= error %>
+    </p>
+    <% end %>
+      <% end %><br>

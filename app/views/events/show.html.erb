@@ -40,7 +40,14 @@
   <label>Section:</label>
   <input type="text" name="ticket[section]"><br>
   <button type="submit">Sell Ticket</button>
-</form>
+</form><br>
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p style="color:red; font-size: 12px;">
+      <%= error %>
+    </p>
+    <% end %>
+      <% end %><br>
 
 
 
