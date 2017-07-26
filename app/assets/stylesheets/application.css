@@ -13,15 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
 #display_content {
     display: none;
 }
 .display_content {
     display: block;
 }
-  
+nav {
+background-color: #260354;
+}  
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'PT Sans', sans-serif;
 }
 #facebook{
     background-color: rgb(66, 103, 178);
