@@ -20,4 +20,3 @@ Geocoder.configure(
   # units: :mi,                 # :km for kilometers or :mi for miles
   # distances: :linear          # :spherical or :linear
 )
-puts "\n\n\n\n\n\n\n\n\n\HELLO\b\b\b\b\b\n\n\n\n\n\n\n\n\n"

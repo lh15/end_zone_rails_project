@@ -1,32 +1,68 @@
-<h1><%= @event.title %></h1>
-<h3><%= @event.date.strftime("%A, %B %d, %Y") %></h3>
-<h3><%= @event.venue.name %></h3>
+<h1>
+  <%= @event.title %>
+</h1>
+<h3>
+  <%= @event.date.strftime("%A, %B %d, %Y") %>
+</h3>
+<h3>
+  <%= @event.venue.name %>
+</h3>
 
 <h2>Tickets</h2>
 <ul>
-<form action="/events/<%= @event.id %>/tickets/cart" method="POST">  
-    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">  
-    <% @tickets.each do |ticket| %>
+  <form action="/events/<%= @event.id %>/tickets/cart" method="POST">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
+    <% if !!@tickets %>
+      <% @tickets.each do |ticket| %>
         <li>
-            Seat:<%= ticket.seat_number %><%= ticket.section %><br>
-            $<%= '%.2f' % ticket.price %><br>
-            <input type="checkbox" name="selected_ticket[]" value="<%= ticket.id %>"> Select
+          Seat:
+          <%= ticket.seat_number %>
+            <%= ticket.section %><br> $
+              <%= '%.2f' % ticket.price %><br>
+                <input type="checkbox" name="selected_ticket[]" value="<%= ticket.id %>"> Select
         </li>
-    <% end %>
-    <button type="submit">Add to Cart</button>
-</form>    
+        <% end %>
+          <button type="submit">Add to Cart</button>
+          <% end %>
+
+  </form>
 </ul>
 
 <h2>Sell Tickets</h2>
 <form action="/events/<%= @event.id %>/tickets" method="POST">
-    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
-    <label>Price:</label>
-    <input type="number" name="ticket[price]"><br>
-    <label>Seat Number:</label>
-    <input type="number" name="ticket[seat_number]"><br>
-    <label>Section:</label>
-    <input type="text" name="ticket[section]"><br>
-    <button type="submit">Sell Ticket</button>
-</form>    
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
+  <label>Price:</label>
+  <input type="number" name="ticket[price]"><br>
+  <label>Seat Number:</label>
+  <input type="number" name="ticket[seat_number]"><br>
+  <label>Section:</label>
+  <input type="text" name="ticket[section]"><br>
+  <button type="submit">Sell Ticket</button>
+</form>
 
 
+
+
+
+
+<!-- *********
+SEAT MAP STUFF
+************** -->
+<!-- 
+<div class="wrapper">
+  <div class="container">
+    <div id="seat-map">
+      <div class="front-indicator">Front</div>
+
+    </div>
+    <div class="booking-details">
+      <h2>Booking Details</h2>
+
+      <h3> Selected Seats (<span id="counter">0</span>):</h3>
+      <ul id="selected-seats"></ul>
+      Total: <b>$<span id="total">0</span></b>
+      <button class="checkout-button">Checkout &raquo;</button>
+      <div id="legend"></div>
+    </div>
+  </div>
+</div> -->
