@@ -67,11 +67,24 @@ height: 100px;
     color: white;
 }
 #dropdown3{
-    background-color: #00A1A1;
-    color: white;
+    background-color: #00A1A1 !important;
+    color: white !important;
 }
 .logo {
-    width: 30px;
+    width: 100px;
+    transform: rotate(25deg);
+    margin-left: 24px;
+}
+.dropdown-content li>a, .dropdown-content li>span {
+
+    color: white;
+
+}
+.dropdown-button {
+    margin-top: 20px;
+}
+.dropdown-buttonevents {
+    margin-top:20px;
 }
 
 
