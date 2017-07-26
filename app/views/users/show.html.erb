@@ -41,7 +41,7 @@
                 Status: sold (on <%= listing.date_purchased.strftime("%m/%d/%y") %>)
             <% else %>
                 Status: for sale<br>
-                <a href='/tickets/<%= listing.id %>' data-method='delete'>Delete this listing</a><br>
+                <a href='/tickets/<%= listing.id %>/edit'>Edit this listing</a><br>
             <% end %>       
         </li><br>  
     <% end %>  

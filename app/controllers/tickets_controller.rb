@@ -22,10 +22,27 @@ class TicketsController < ApplicationController
             session[:cart] = []
         end    
         session[:cart] += params[:selected_ticket]
+        session[:cart] = session[:cart].uniq
         tickets = Ticket.where(id: params[:selected_ticket])
         tickets.update_all(sold:true)
         redirect_to '/cart'
     end
+
+    def edit
+        @ticket = Ticket.find(params[:ticket_id])
+        render 'edit'
+    end     
+
+    def update
+        ticket = Ticket.find(params[:ticket_id])
+        ticket.update(price:params[:price], seat_number:params[:seat_number], section:params[:section])
+        if ticket.save
+            redirect_to '/users/show'
+        else 
+            flash[:errors] = ticket.errors.full_messages
+            redirect_to "/tickets/#{ ticket.id }/edit"
+        end
+    end             
 
     def cart
         @total = 0
