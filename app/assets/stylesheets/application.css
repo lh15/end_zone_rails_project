@@ -116,3 +116,13 @@ h1{
   width: 100%;
   margin: 0px auto;
 }
+#searchdiv {
+    background-color: #260354;
+    height: 110px;
+    padding: 20px;
+}
+#searchbar {
+    margin: 0px auto;
+    background-color: white;
+    width: 50%;
+}

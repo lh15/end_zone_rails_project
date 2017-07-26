@@ -1,5 +1,10 @@
 <%= image_tag  "concert_crowd.jpg", :class => "banner_img" %>
 
+  <div id="searchdiv">
+    <div id="searchbar">
+      <input type="text" placeholder="Search for events, artists, teams or venues">
+    </div>
+  </div>
 
   <div id="loadingDiv" class="preloader-wrapper big active">
     <div class="spinner-layer spinner-blue-only">
@@ -29,12 +34,14 @@
               <img class="image_in_card" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Stubhub.svg/1200px-Stubhub.svg.png">
             </div>
             <div class="card-content">
-              <p><%= event.title %></p>
+              <p>
+                <%= event.title %>
+              </p>
             </div>
           </div>
         </div>
 
-        
+
       </a>
       <% end %>
   </div>
