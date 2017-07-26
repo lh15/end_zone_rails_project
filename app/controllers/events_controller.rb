@@ -19,14 +19,4 @@ class EventsController < ApplicationController
         @tickets = Ticket.where(event_id:params[:id], sold:false)
         render 'show'
     end     
-
-  def index
-    @events = Event.all
-    render 'index'
-  end
-
-  def show
-    @event = Event.find(params[:id])
-    render 'show'
-  end
 end
