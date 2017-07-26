@@ -15,7 +15,7 @@ class ChargesController < ApplicationController
     tickets.each do |ticket|
         @amount += ticket.price
         user = User.find(session[:user_id])
-        ticket.update(buyer_id: user, date_purchased: DateTime.now)  
+        ticket.update(buyer_id: user.id, date_purchased: DateTime.now)  
     end  
 
     session[:cart] = []
