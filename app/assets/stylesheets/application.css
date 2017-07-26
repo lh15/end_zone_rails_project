@@ -103,3 +103,16 @@ h1{
   width: 40%;
   margin: 0px auto;
 }
+
+.card img {
+  width: 80%;
+
+}
+.image_in_card {
+    opacity: .6
+}
+.banner_img{
+  display: block;
+  width: 100%;
+  margin: 0px auto;
+}

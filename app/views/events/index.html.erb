@@ -1,28 +1,40 @@
-<a href="/success">My Profile</a>
-<h1>Upcoming events </h1>
-<%# <%= @city.inspect || @ip.inspect %>
+<%= image_tag  "concert_crowd.jpg", :class => "banner_img" %>
 
 
-<div id="loadingDiv" class="preloader-wrapper big active">
+  <div id="loadingDiv" class="preloader-wrapper big active">
     <div class="spinner-layer spinner-blue-only">
       <div class="circle-clipper left">
         <div class="circle"></div>
-      </div><div class="gap-patch">
+      </div>
+      <div class="gap-patch">
         <div class="circle"></div>
-      </div><div class="circle-clipper right">
+      </div>
+      <div class="circle-clipper right">
         <div class="circle"></div>
       </div>
     </div>
   </div>
-       
-    </div>
-<div id="display_events">
 
-</div>
-<ul>
-<% @events.each do |event| %>
-    <li>
-        <a href="/events/<%= event.id %>"><%= event.title %></a>
-    </li>
-<% end %>
-</ul>
+  </div>
+  <div id="display_events">
+
+  </div>
+  <div class="row">
+    <% @events.each do |event| %>
+      <a href="/events/<%= event.id %>">
+
+        <div class="col s12 m3 ">
+          <div class="card">
+            <div class="card-image">
+              <img class="image_in_card" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Stubhub.svg/1200px-Stubhub.svg.png">
+            </div>
+            <div class="card-content">
+              <p><%= event.title %></p>
+            </div>
+          </div>
+        </div>
+
+        
+      </a>
+      <% end %>
+  </div>
