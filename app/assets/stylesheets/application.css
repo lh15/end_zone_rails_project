@@ -27,6 +27,7 @@ height: 100px;
 }  
 * {
     font-family: 'PT Sans', sans-serif;
+    
 }
 #facebook{
     background-color: rgb(66, 103, 178);
@@ -89,4 +90,39 @@ height: 100px;
 nav .brand-logo {
 
     height: 20px;
+}
+h1{
+    font-size: 2em;
+  }
+
+
+#dropdown1, #dropdown2, #dropdown3 {
+  top: 70px !important;
+}
+#login{
+  width: 40%;
+  margin: 0px auto;
+}
+
+.card img {
+  width: 80%;
+
+}
+.image_in_card {
+    opacity: .6
+}
+.banner_img{
+  display: block;
+  width: 100%;
+  margin: 0px auto;
+}
+#searchdiv {
+    background-color: #260354;
+    height: 110px;
+    padding: 20px;
+}
+#searchbar {
+    margin: 0px auto;
+    background-color: white;
+    width: 50%;
 }

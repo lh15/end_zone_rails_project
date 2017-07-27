@@ -6,11 +6,11 @@
   <%= csrf_meta_tags %>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -32,7 +32,7 @@
       <li><a href="">Chicago</a></li>
       <li class="divider"></li>
       <li><a href="">Los Angeles</a></li>
-      
+
     </ul>
     <ul id="dropdown2" class="dropdown-content">
       <li><a href="">Orders</a></li>
@@ -41,36 +41,43 @@
       <li class="divider"></li>
       <li><a href="/users/show">Payments</a></li>
     </ul>
-     <ul id="dropdown3" class="dropdown-content">
-      <li><a href="">My hub</a></li>
+    <ul id="dropdown3" class="dropdown-content">
       <li class="divider"></li>
-      <li><a href="">Log in</a></li>
-      <li class="divider"></li>
-      
+      <% if logged_in? %>
+        <li><a href="/users/show">MyHub</a></li>
+        <li class="divider"></li>
+        <li><a href="/users/logout">Logout</a></li>
+      <% else %>
+        <li><a href="/users/login">Login</a></li>
+        <li class="divider"></li>
+      <% end %>
+        <li class="divider"></li>
+
     </ul>
     <nav>
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo"> <%= image_tag  "ticket_1_.png", :class => "logo" %> </a>
+        <a href="/" class="brand-logo">
+          <%= image_tag  "ticket_1_.png", :class => "logo" %>
+        </a>
         <ul class=" right hide-on-med-and-down">
           <!-- Dropdown Trigger -->
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Find events<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-button" href="" data-activates="dropdown1">Find events<i class="material-icons right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-button" href="">Sell tickets</a></li>
-           <li><a class="dropdown-button" href="#!" data-activates="dropdown2">My tickets<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-button" href="" data-activates="dropdown2">My tickets<i class="material-icons right">arrow_drop_down</i></a></li>
           <!-- Dropdown Trigger -->
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown3"> Sign in<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-button" href="" data-activates="dropdown3"> Sign in<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
       </div>
     </nav>
   </div>
-  <% if logged_in? %>
-    <a href="/users/logout">Log Out</a>
-    <% else %>
-      <a href="/users/login">Log In</a>
-      <% end %>
-        <br>
 
-        <%= yield %>
-
+  <%= yield %>
+    <script>
+      $(document).ready(function () {
+        $(".dropdown-button").dropdown();
+        $('.modal').modal();
+      });
+    </script>
 </body>
 
 </html>

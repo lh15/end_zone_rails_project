@@ -6,20 +6,46 @@
     <% end %>
       <% end %>
         <br><br>
-          <h3>Sign up, Pay up, Get out </h3>
+
+
+
+        <h1>Please <a href="#modal_login">Login</a> or go to <a href="/events">Events</a></h1> 
+        <!-- Modal Structure -->
+        <div id="modal_login" class="modal">
+          <form action="/users/login" method="post" id="login">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" name="user[email]" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" name="user[password]" class="validate">
+                <label for="password">Password</label>
+              </div>
+            </div>
+            <input id="signupbutton" type="submit" value="Sign in">
+          </form>
+          <br>
+          <a id="tag" href=""> Forgot your password? </a>
+          <p>New to EndZone? <span style="color: rgb(66, 103, 178)"> <a href="#modal_reg">Sign Up</a></span> </p>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="modal_reg" class="modal">
+          <p>Sign up, Pay up, Get out </p>
           <br>
           <a href="http://www.facebook.com">
             <div id="facebook">
-              
+
               <p><img id="facebooklogo" src="https://s-media-cache-ak0.pinimg.com/736x/3f/40/7d/3f407dc965335257705ea112bb3a32ce--energy-use-a-program.jpg">                Sign up with facebook
               </p>
             </div>
           </a>
-          <br>
           <br> OR
-          <br>
-          <br>
-          <h5> Sign up with EndZone! </h5>
+          <p> Sign up with EndZone! </p>
 
           <div class="row">
             <form class="col s12" action="/users" method="post">
@@ -77,11 +103,11 @@
           <p> By signing up, you agree to our <span style="color: rgb(66, 103, 178)"> user agreement </span> and <span style="color: rgb(66, 103, 178)"> privacy notice</span>.
           </p>
           <br><br>
-          <h5>Have an account with EndZone? <span style="color: rgb(66, 103, 178)"> Sign in </span> </h5>
+          <p>Have an account with EndZone? <span style="color: rgb(66, 103, 178)"> Sign in </span> </p>
           <br><br>
 
 
-          <h3> Get seats you'll hate, anytime </h3>
+          <p> Get seats you'll hate, anytime </p>
 
           <br>
           <a href="http://www.facebook.com">
@@ -91,32 +117,14 @@
             </div>
           </a>
 
-          <br>
-          <br> OR
-          <br>
-          <br>
+        </div>
 
 
-          
-          <form action="/users/login" method="post" id="login">
-            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="email" type="email" name="user[email]" class="validate">
-                <label for="email">Email</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="password" type="password" name="user[password]" class="validate">
-                <label for="password">Password</label>
-              </div>
-            </div>
-            <input id="signupbutton" type="submit" value="Sign in">
-          </form>
-          <br>
-          <a id="tag" href=""> Forgot your password? </a>
 
-          <br><br>
-          <h5>New to EndZone? <span style="color: rgb(66, 103, 178)"> Sign Up </span> </h5>
-          
+
+
+        <script>
+          $(document).ready(function () {
+            $('#modal_login').modal('open');
+          });
+        </script>
