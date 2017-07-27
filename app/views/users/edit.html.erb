@@ -1,0 +1,56 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p style="color:red; font-size: 12px;">
+      <%= error %>
+    </p>
+    <% end %>
+      <% end %>
+        <br><br>
+
+          <div class="row">
+            <form class="col s12" action="/users/<%= @user.id %>" method="post">
+                <input type="hidden" name="_method" value="patch">
+              <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="first_name" name="user[first_name]" type="text" class="validate">
+                  <label for="first_name" value="<%= @user.first_name %>">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="last_name" type="text" name="user[last_name]" class="validate">
+                  <label for="last_name" value="<%= @user.last_name %>">Last Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="address" type="text" name="user[address]" class="validate">
+                  <label for="address" value="<%= @user.address %>">Address</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="phonenumber" type="text" name="user[phone_number]" class="validate">
+                  <label for="phonenumber" value="<%= @user.phone_number %>">Phone Number</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" name="user[email]" class="validate">
+                  <label for="email" value="<%= @user.email %>">>Email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" name="user[password]" class="validate">
+                  <label for="password">Password</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="confirmpassword" type="password" name="user[password_confirmation]" class="validate">
+                  <label for="confirmpassword">Confirm Password</label>
+                </div>
+              </div>
+              <input id="signupbutton" type="submit" value="Save Changes">
+            </form>
+          </div>

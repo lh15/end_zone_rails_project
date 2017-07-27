@@ -13,8 +13,11 @@ Rails.application.routes.draw do
   post '/users/login' => 'users#authenticate'
 
   get '/users/show' => 'users#show' #show users upcoming events
-  
 
+  get '/users/:id/edit' => 'users#edit' #sends to user profile update page
+
+  patch '/users/:id' => 'users#update' #processes the changes to user profile.
+  
   # *************************************************************
   # event routes
   # *************************************************************
