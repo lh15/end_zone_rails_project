@@ -1,0 +1,19 @@
+<div class="row">
+    <h1>Here are events in <%= @state %></h1>
+    <% @events.each do |event| %>
+      <a href="/events/<%= event.id %>">
+        <div class="col s12 m3 ">
+          <div class="card">
+            <div class="card-image">
+              <img src="<%= event.venue.img_url %>" alt="" class="image_in_card">
+            </div>
+            <div class="card-content">
+              <p>
+                <%= event.title %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <% end %>
+  </div>

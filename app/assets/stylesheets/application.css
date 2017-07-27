@@ -106,10 +106,11 @@ h1{
 
 .card img {
   width: 80%;
-
 }
 .image_in_card {
-    opacity: .6
+    opacity: .6;
+    width: 100%;
+    height: 180px;
 }
 .banner_img{
   display: block;
@@ -125,4 +126,22 @@ h1{
     margin: 0px auto;
     background-color: white;
     width: 50%;
+}
+#searchbar input{
+    margin: 0px !important;
+    padding-left: 20px;
+    display: inline-block !important;
+    width: 80%;
+    border-bottom: none; 
+    height: 3.4rem;
+}
+  #searchbar i{
+   padding: 10px;
+   background-color: #D94185;
+   color: white;
+}
+      
+#loadingDiv{
+  display: block;
+  margin: 0px auto;
 }

@@ -1,8 +1,9 @@
 <%= image_tag  "concert_crowd.jpg", :class => "banner_img" %>
 
-  <div id="searchdiv">
-    <div id="searchbar">
+  <div id="searchdiv" class="valign-wrapper">
+    <div id="searchbar" >
       <input type="text" placeholder="Search for events, artists, teams or venues">
+      <i class="fa fa-2x fa-search right" aria-hidden="true"></i>
     </div>
   </div>
 
@@ -20,18 +21,18 @@
     </div>
   </div>
 
-  </div>
   <div id="display_events">
 
   </div>
   <div class="row">
+    <h1>Here are some more events not in your area</h1>
     <% @events.each do |event| %>
       <a href="/events/<%= event.id %>">
 
         <div class="col s12 m3 ">
           <div class="card">
             <div class="card-image">
-              <%= image_tag  "ticket_1_.png", :class => "image_in_card" %>
+              <img src="<%= event.venue.img_url %>" alt="" class="image_in_card">
             </div>
             <div class="card-content">
               <p>
@@ -40,8 +41,6 @@
             </div>
           </div>
         </div>
-
-
       </a>
       <% end %>
   </div>
