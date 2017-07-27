@@ -2,8 +2,10 @@
 
   <div id="searchdiv" class="valign-wrapper">
     <div id="searchbar" >
-      <input type="text" placeholder="Search for events, artists, teams or venues">
+      <form action="/events/search" id="search">
+        <input id="searchInput" type="text" placeholder="Search for events, artists, teams or venues" name="search">
       <i class="fa fa-2x fa-search right" aria-hidden="true"></i>
+      </form>
     </div>
   </div>
 

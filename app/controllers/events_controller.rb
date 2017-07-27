@@ -15,6 +15,12 @@ class EventsController < ApplicationController
         @events = Event.all 
         render 'index'
     end  
+
+    def search
+        @events = Event.search(params[:search])
+        puts @events.inspect
+        render partial: 'local_events'
+    end
     
     def show
         @event = Event.find(params[:id])
