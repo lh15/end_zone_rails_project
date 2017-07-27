@@ -64,10 +64,10 @@
             <% else %>
                 <% ticket.each do |ticket_each| %>
                     <li>
-                    Seat: <%= ticket_each.seat_number %><%= ticket_each.section %>  |  
+                    Seat: <%= ticket_each.seat_number %><%= ticket_each.section %>  <br>
                     Price: $<%= '%.2f' % ticket_each.price %>
                     <% sum += ticket_each.price %>
-                    <% if ticket_each.sold == true %>
+                    <br><% if ticket_each.sold == true %>
                         Status: sold (on <%= ticket_each.date_purchased.strftime("%m/%d/%y") %>))
                         <% else %>
                             Status: for sale<br>
