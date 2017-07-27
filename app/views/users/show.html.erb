@@ -17,7 +17,6 @@
     <% if !!@purchases %>
 
     <% @purchases.group_by(&:event).each do |purchase| %>
-        <% purchase.inspect %>
         <% purchase.each do |ticket| %>
             <% sum = 0 %>
             <% if ticket == purchase[0] %>
@@ -49,27 +48,39 @@
 </div>
 
 <div id="listings">
-    <h3>My Listings</h3>
+    <h3>Listings</h3>
     <ul style="list-style:none">
     <% if !!@listings %>
-    <% @listings.each do |listing| %>
-        <li>
-            <%= listing.event.title %><br>
-            <%= listing.event.date.strftime("%m/%d/%y") %><br>
-            <%= listing.event.venue.name %><br>
-            <% if listing.sold == true %>
-                Status: sold (on <%= listing.date_purchased.strftime("%m/%d/%y") %>)
+
+    <% @listings.group_by(&:event).each do |purchase| %>
+        <% purchase.each do |ticket| %>
+            <% sum = 0 %>
+            <% if ticket == purchase[0] %>
+                <h5><%= ticket.title %><br>
+                <%= ticket.date.strftime("%m/%d/%y") %><br>
+                <%= ticket.venue.name %></h5>
             <% else %>
-                Status: for sale<br>
-                <a href='/tickets/<%= listing.id %>/edit'>Edit this listing</a><br>
+                <% ticket.each do |ticket_each| %>
+                    <li>
+                    Seat: <%= ticket_each.seat_number %><%= ticket_each.section %>  |  
+                    Price: $<%= '%.2f' % ticket_each.price %>
+                    <% sum += ticket_each.price %>
+                    <% if ticket_each.sold == true %>
+                        Status: sold (on <%= ticket_each.date_purchased.strftime("%m/%d/%y") %>))
+                        <% else %>
+                            Status: for sale<br>
+                            <a href='/tickets/<%= ticket_each.id %>/edit'>Edit this listing</a><br>   
+                    <% end %>
+                    </li><br>
+                <% end %>
             <% end %>       
-        </li><br>  
+        <% end %>    
+
+        <br>
     <% end %>  
     </ul>  
     <% else %>
-        <p>No tickets for sale yet!</p>
+        <p>No listings yet!</p>
     <% end %>
 </div>
-
-
 
