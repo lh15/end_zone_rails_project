@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     lat_lon = "#{params['lat']},#{params['lon']}"
     response = Geocoder.search(lat_lon).first
     @state = response.state if response.present?
-    @events = Event.includes(:venue).where('venues.state = ?', "NY").references(:venue)
+    @events = Event.includes(:venue).where('venues.state = ?', response.state).references(:venue)
      
     puts @events.inspect
     render partial: 'local_events'

@@ -16,7 +16,7 @@
 
 category1 = Category.create(category: "Sports")
 
-venue1 = Venue.create(name: "Guaranteed Rate Field", img_url: "http://www.ballparksofbaseball.com/wp-content/uploads/2016/03/uscell_topv2.jpg", city: "Chicago", state: "IL", country: "USA")
+venue1 = Venue.create(name: "Guaranteed Rate Field", img_url: "http://www.ballparksofbaseball.com/wp-content/uploads/2016/03/uscell_topv2.jpg", city: "Chicago", state: "Illinois", country: "USA")
 
 event1 = Event.create(title: "Philosopher Soccer", date:Date.parse('31-10-2017'), description: "A battle of wits!", venue_id: 1, category_id: 1)
 
@@ -36,7 +36,7 @@ events_performer2 = EventsPerformer.create(performer_id: 2, event_id: 1)
 
 category2 = Category.create(category: "Concert")
 
-venue2 = Venue.create(name: "Madison Square Garden", img_url: "http://www.themadisonsquaregardencompany.com/content/dam/themadisonsquaregardencompany/brandsImg/brandsPageImg/MSG_120413_156W.jpg", city: "New York ", state: "NY", country: "USA")
+venue2 = Venue.create(name: "Madison Square Garden", img_url: "http://www.themadisonsquaregardencompany.com/content/dam/themadisonsquaregardencompany/brandsImg/brandsPageImg/MSG_120413_156W.jpg", city: "New York ", state: "New York", country: "USA")
 
 event2 = Event.create(title: "A Thousand Angry Kazoos", date:Date.parse('09-10-2017'), description: "Have you ever wanted to hear a thousand angry kazoos?", venue_id: 2, category_id: 2)
 
@@ -54,7 +54,7 @@ events_performer4 = EventsPerformer.create(performer_id: 4, event_id: 2)
 
 category3 = Category.create(category: "Theatre/Comedy")
 
-venue3 = Venue.create(name: "Hollywood Bowl", img_url: "https://i.gse.io/gse_media/114/6/1406312149-venue-hollywoodbowl.jpg?p=1", city: "Los Angeles", state: "CA", country: "USA")
+venue3 = Venue.create(name: "Hollywood Bowl", img_url: "https://i.gse.io/gse_media/114/6/1406312149-venue-hollywoodbowl.jpg?p=1", city: "Los Angeles", state: "California", country: "USA")
 
 event3 = Event.create(title: "Mystery Science Theatre 3000 Live!", date:Date.parse('05-11-2018'), description: "Come and see MST3K Live!", venue_id: 3, category_id: 3)
 
