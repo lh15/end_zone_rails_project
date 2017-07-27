@@ -26,7 +26,44 @@ class EventsController < ApplicationController
         @event = Event.find(params[:id])
         @tickets = Ticket.where(event_id:params[:id], sold:false)
         render 'show'
-    end     
+    end  
+    def sports
+        @category = "Sports"
+        @events = Event.where(category_id:1)   
+        render 'categories'
+    end 
+    
+    def concerts
+        @category = "Concerts"
+        @events = Event.where(category_id:2)
+        render 'categories'
+    end 
+    
+    def theatre
+        @category = "Theatre and Comedy"
+        @events = Event.where(category_id:3)
+        render 'categories'
+    end  
+    
+    def newyork
+        @category = "Events in New York"
+        venues = Venue.where(city:"New York ")
+        @events = Event.where(venue:venues)
+        render 'categories'
+    end 
+    
+    def chicago
+        @category = "Events in Chicago"        
+        venues = Venue.where(city:"Chicago")
+        @events = Event.where(venue:venues)
+        render 'categories'
+    end   
+    def losangeles
+        @category = "Events in Los Angeles"        
+        venues = Venue.where(city:"Los Angeles")
+        @events = Event.where(venue:venues)
+        render 'categories'
+    end    
 end      
 
 
