@@ -47,6 +47,8 @@
         <li><a href="/users/show">MyHub</a></li>
         <li class="divider"></li>
         <li><a href="/users/logout">Logout</a></li>
+        <li><a href="/cart">Cart (<%= session[:cart].count %>)</a></li>
+        <li class="divider"></li>
       <% else %>
         <li><a href="/users/login">Login</a></li>
         <li class="divider"></li>

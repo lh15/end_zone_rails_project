@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
+      session[:cart] = []
     else
       flash[:errors] = user.errors.full_messages
     end
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
       redirect_to '/users/login'
     elsif user.authenticate(login_params[:password])
       session[:user_id] = user.id
+      session[:cart] = []
       redirect_to '/events'
     else
       flash[:errors] = ['Incorrect Password']
