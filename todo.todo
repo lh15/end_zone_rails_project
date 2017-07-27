@@ -1,36 +1,64 @@
+**********************
+Thursday Meeting todos
+**********************
+☐ event cards
+  ☐ date format
+  ☐ time add to seed data?
+  ☐ location
+
+☐ in event/show
+  ☐ add venue image banner
+  ☐ add static seat map (to seed data and to model too)
+  ☐ 
+
+☐ listing tickets
+  ☐ validations for duplicates
+
+☐ sell tickets link (jessica)
+  ☐ 
+
+
+
+
+
+
+
+
+
+
 ************
 USER STORIES
 ************
 
-☐ log/reg (mike)
-  ☐ validations
+✔ log/reg (mike) @done (7/27/2017, 4:16:01 PM)
+  ✔ validations @done (7/27/2017, 4:15:59 PM)
     ✔ basic validations (presence, uniqueness, email) @done (7/25/2017, 12:43:41 PM)
     ✔ phone number @done (7/25/2017, 12:43:38 PM)
     ✔ password regex @done (7/25/2017, 12:43:36 PM)
     ✔ validations appear properly in view @done (7/25/2017, 1:49:22 PM)
-  ☐ redirects
-    ☐ landing page is events. (make root route)
-    ☐ if !logggedin what can't the user do??
-      ☐ view buy ticket form, must be logggedin. (redirect to proper event? session?)
-      ☐ sell ticket (add ticket)
-      ☐ view user profile (if they click my hub, redirect to login)
-      ☐ 
+  ✔ redirects @done (7/27/2017, 4:16:04 PM)
+    ✔ landing page is events. (make root route) @done (7/27/2017, 4:16:05 PM)
+    ✔ if !logggedin what can't the user do?? @done (7/27/2017, 4:16:07 PM)
+      ✔ view buy ticket form, must be logggedin. (redirect to proper event? session?) @done (7/27/2017, 4:16:08 PM)
+      ✔ sell ticket (add ticket) @done (7/27/2017, 4:16:09 PM)
+      ✔ view user profile (if they click my hub, redirect to login) @done (7/27/2017, 4:16:10 PM)
+      
 
 
-☐ search events with search bar (placeholder will say search by all those things, but the query will only search event title)
+✔ search events with search bar (placeholder will say search by all those things, but the query will only search event title) @done (7/27/2017, 4:16:20 PM)
 
-☐ View events
+✔ View events @done (7/27/2017, 4:16:22 PM)
   ☐ by default, by location. can change location (events location)(leibel)
   ☐ can also view by date
 
 
-☐ dropdown on top left where users can see categories and main cities
+✔ dropdown on top left where users can see categories and main cities @done (7/27/2017, 4:17:22 PM)
 
 ☐ list tickets
   ✔ attributes for tickets @done (7/26/2017, 10:38:37 AM)
   ☐ validations
 
-☐ buy tickets 
+☐ buy tickets
   ☐ by zone, section, or list
   ☐ by price range
 
@@ -43,24 +71,23 @@ USER STORIES
   ☐ crazy idea (puzzle)
 
 
-☐ remove tickets
-  ☐ only ticket seller can
+✔ remove tickets @done (7/27/2017, 4:17:49 PM)
+  ✔ only ticket seller can @done (7/27/2017, 4:17:50 PM)
 
-☐ checkout
+✔ checkout @done (7/27/2017, 4:18:12 PM)
   ✔ redirects to new page where ticket gets appended to new page (session?)(this way, if user comes back to page, tickets are still in cart) @done (7/26/2017, 10:39:46 AM)
-  ☐ once bought, clear session 
+  ✔ once bought, clear session @done (7/27/2017, 4:18:10 PM)
+
+✔ activity history @done (7/27/2017, 4:18:13 PM)
+  ✔ in user/my hub @done (7/27/2017, 4:18:15 PM)
+  ✔ very similar to shoe store. table diplays bought and sold tickets @done (7/27/2017, 4:18:16 PM)
 
 
-☐ activity history
-  ☐ in user/my hub
-  ☐ very similar to shoe store. table diplays bought and sold tickets
+✔ profile details @done (7/27/2017, 4:18:18 PM)
+  ✔ in my hub @done (7/27/2017, 4:18:18 PM)
 
 
-☐ profile details
-  ☐ in my hub
-
-
-☐ Add image url to performer 
+✔ Add image url to performer @done (7/27/2017, 4:18:20 PM)
 
 
 Models
