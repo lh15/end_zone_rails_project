@@ -14,13 +14,32 @@
     <h3>Purchase History</h3>
     <ul style="list-style:none">
     <% if !!@purchases %>
-    <% @purchases.each do |purchase| %>
-        <li>
-            <%= purchase.event.title %><br>
-            <%= purchase.event.date.strftime("%m/%d/%y") %><br>
-            <%= purchase.event.venue.name %><br>
-            (purchased on <%= purchase.date_purchased.strftime("%m/%d/%y") %>)
-        </li>    
+
+    <% @purchases.group_by(&:event).each do |purchase| %>
+        <% purchase.inspect %>
+        <% purchase.each do |ticket| %>
+            <% sum = 0 %>
+            <% if ticket == purchase[0] %>
+                <h5><%= ticket.title %><br>
+                <%= ticket.date.strftime("%m/%d/%y") %><br>
+                <%= ticket.venue.name %></h5>
+            <% else %>
+                <% ticket.each do |ticket_each| %>
+                    <li>
+                        <% if ticket_each == ticket[0] %>
+                            (Purchased on <%= ticket_each.date_purchased.strftime("%m/%d/%y") %>)<br>
+                        <% end %>
+                    Seat: <%= ticket_each.seat_number %><%= ticket_each.section %>  |  
+                    Price: $<%= '%.2f' % ticket_each.price %>
+                    <% sum += ticket_each.price %>
+                    </li>
+                <% end %>
+
+                Total: $<%= '%.2f' % sum %>
+            <% end %>       
+        <% end %>    
+
+        <br>
     <% end %>  
     </ul>  
     <% else %>

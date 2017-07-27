@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
-    @purchases = Ticket.where(buyer_id:@user).group(:event_id, :date_purchased)
+    @purchases = Ticket.where(buyer_id:@user)
     @listings = Ticket.where(seller_id:@user).group(:event_id, :date_purchased, :buyer_id)
   end
 
