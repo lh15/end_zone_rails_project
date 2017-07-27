@@ -169,3 +169,7 @@ h1 {
 input {
   margin: 0px !important;
 }
+
+.profileimg {
+    height: 50px;
+}
