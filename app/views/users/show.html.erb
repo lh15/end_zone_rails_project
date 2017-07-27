@@ -1,9 +1,11 @@
-<a href="/events">View Events</a><br>
-<h1> Hi <%= @user.first_name %> </h1>
+<%= image_tag  "handsbackground.jpg", :class => "banner_img2" %>
+
+<h1> Hi <%= @user.first_name %>! </h1>
+<br>
 
 
 <div id="info">
-    <h3>Basic Info</h3>
+    <h3>Contact Info</h3><hr>
     <p> Full Name: <%= @user.first_name %> <%= @user.last_name %> </p>
     <p> Address: <%= @user.address %> </p>
     <p> Phone: <%= @user.phone_number %> </p>
@@ -12,7 +14,7 @@
 <a href="/users/<%= @user.id %>/edit">Edit your profile</a>
 
 <div id="purchases">
-    <h3>Purchase History</h3>
+    <h3>Purchase History</h3><hr>
     <ul style="list-style:none">
     <% if !!@purchases %>
 
@@ -48,7 +50,7 @@
 </div>
 
 <div id="listings">
-    <h3>Listings</h3>
+    <h3>Listings</h3><hr>
     <ul style="list-style:none">
     <% if !!@listings %>
 
