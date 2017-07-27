@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  skip_before_action :require_login, only: %i[get_location index show]
+  skip_before_action :require_login, only: %i[get_location index show search sports concerts theatre chicago newyork losangeles]
   def get_location
     lat = params['lat']
     lon = params['lon']

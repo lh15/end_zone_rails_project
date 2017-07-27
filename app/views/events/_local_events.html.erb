@@ -9,11 +9,14 @@
         <div class="col s12 m3 ">
           <div class="card">
             <div class="card-image">
-              <img src="<%= event.venue.img_url %>" alt="" class="image_in_card">
+              <img src="<%= event.performers[0].img_url %>" alt="" class="image_in_card">
             </div>
             <div class="card-content">
               <p>
                 <%= event.title %>
+              </p>
+              <p>
+                <%= event.date %>
               </p>
             </div>
           </div>
