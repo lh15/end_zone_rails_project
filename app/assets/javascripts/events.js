@@ -3,7 +3,6 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(function () {
-<<<<<<< HEAD
   // if ("geolocation" in navigator) { //check geolocation available 
   //   //try to get user current location using getCurrentPosition() method
   //   navigator.geolocation.getCurrentPosition(function (position) {
@@ -21,25 +20,6 @@ $(document).ready(function () {
   // } else {
   //   console.log("Browser doesn't support geolocation!");
   // }
-=======
-  if ("geolocation" in navigator) { //check geolocation available 
-    //try to get user current location using getCurrentPosition() method
-    navigator.geolocation.getCurrentPosition(function (position) {
-      console.log("Found your location \nLat : " + position.coords.latitude + " \nLang :" + position.coords.longitude);
-      $.ajax({
-        url: "/events/location",
-        type: "get",
-        data: { lat: position.coords.latitude, lon: position.coords.longitude },
-        success: function (serverResponse) {
-          console.log(serverResponse)
-          $('#display_events').html(serverResponse)
-        }
-      });
-    });
-  } else {
-    console.log("Browser doesn't support geolocation!");
-  }
->>>>>>> 1248f5ec6591c88c6464cc09ad9532e5d3a201c1
   $(document).ajaxStart(function () {
     $("#loadingDiv").css("display", "block");
 
@@ -48,7 +28,6 @@ $(document).ready(function () {
     $("#loadingDiv").css("display", "none");
     $("#display_events").addClass("display_content");
   });
-<<<<<<< HEAD
 
   $( "#search" ).submit(function( event ) {
     event.preventDefault();
@@ -65,8 +44,6 @@ $(document).ready(function () {
   
 });
   
-=======
->>>>>>> 1248f5ec6591c88c6464cc09ad9532e5d3a201c1
 });
 
 
