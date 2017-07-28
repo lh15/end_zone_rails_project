@@ -42,7 +42,8 @@
                   <%= event.title %>
                 </p>
                 <p>
-                  <%= event.date %>
+                  <%= event.date.strftime("%A, %B %d") %><br>
+                  <%= event.venue.city %>, <%= event.venue.state %>
                 </p>
               </div>
             </div>
