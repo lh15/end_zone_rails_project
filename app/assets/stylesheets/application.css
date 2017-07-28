@@ -110,9 +110,9 @@ nav .brand-logo {
   height: 20px;
 }
 
-h1 {
-  font-size: 2em;
-}
+/* h1 { */
+  /* font-size: 2em; */
+/* } */
 
 #dropdown1, #dropdown2, #dropdown3, #dropdown4 {
   top: 70px !important;
@@ -138,6 +138,13 @@ h1 {
   display: block;
   width: 100%;
   margin: 0px auto;
+}
+
+.banner_img3{
+  display: block;
+  width: 100%;
+  margin: 0px auto;
+  height: 400px;  
 }
 #searchdiv {
   background-color: #260354;
