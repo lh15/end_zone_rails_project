@@ -24,14 +24,15 @@
   </div>
 
   <div id="display_events">
-
+ 
   </div>
+  <div class="container">
   <div class="row">
-    <h1>Here are some more events not in your area</h1>
+    <h1>Here are all events! If it's not here it's not a thing. Period! 🤡</h1>
     <% @events.each do |event| %>
       <a href="/events/<%= event.id %>">
 
-        <div class="col s12 m3 ">
+        <div class="col s12 m4 ">
           <div class="card">
             <div class="card-image">
               <img src="<%= event.performers[0].img_url %>" alt="" class="image_in_card">
@@ -48,4 +49,5 @@
         </div>
       </a>
       <% end %>
+  </div>
   </div>

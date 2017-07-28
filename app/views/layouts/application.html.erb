@@ -3,6 +3,7 @@
 
 <head>
   <title>EndZone</title>
+  <meta charset='utf-8'>
   <%= csrf_meta_tags %>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Compiled and minified CSS -->
@@ -79,8 +80,10 @@
       </div>
     </nav>
   </div>
+  
+    <%= yield %>
 
-  <%= yield %>
+  
     <script>
       $(document).ready(function () {
         $(".dropdown-button").dropdown();
