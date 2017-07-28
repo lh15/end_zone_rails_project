@@ -1,10 +1,10 @@
 <%= image_tag  "concert_crowd.jpg", :class => "banner_img" %>
 
   <div id="searchdiv" class="valign-wrapper">
-    <div id="searchbar" >
+    <div id="searchbar">
       <form action="/events/search" id="search">
         <input id="searchInput" type="text" placeholder="Search for events, artists, teams or venues" name="search">
-      <i class="fa fa-2x fa-search right" aria-hidden="true"></i>
+        <i class="fa fa-2x fa-search right" aria-hidden="true"></i>
       </form>
     </div>
   </div>
@@ -24,30 +24,30 @@
   </div>
 
   <div id="display_events">
- 
+
   </div>
   <div class="container">
-  <div class="row">
-    <h1>Here are all events! If it's not here it's not a thing. Period! 🤡</h1>
-    <% @events.each do |event| %>
-      <a href="/events/<%= event.id %>">
+    <div class="row">
+      <h1>Here are all events! If it's not here it's not a thing. Period! 🤡</h1>
+      <% @events.each do |event| %>
+        <a href="/events/<%= event.id %>">
 
-        <div class="col s12 m4 ">
-          <div class="card">
-            <div class="card-image">
-              <img src="<%= event.performers[0].img_url %>" alt="" class="image_in_card">
-            </div>
-            <div class="card-content">
-              <p>
-                <%= event.title %>
-              </p>
-              <p>
-                <%= event.date %>
-              </p>
+          <div class="col s12 m4 ">
+            <div class="card">
+              <div class="card-image">
+                <img src="<%= event.performers[0].img_url %>" alt="" class="image_in_card">
+              </div>
+              <div class="card-content">
+                <p>
+                  <%= event.title %>
+                </p>
+                <p>
+                  <%= event.date %>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
-      <% end %>
-  </div>
+        </a>
+        <% end %>
+    </div>
   </div>

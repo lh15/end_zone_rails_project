@@ -1,16 +1,20 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: %i[new create authenticate]
+  skip_before_action :require_login, only: %i[new login create authenticate]
   def new
+  end
+  def login
   end
   def create
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
       session[:cart] = []
+      redirect_to '/events'
     else
       flash[:errors] = user.errors.full_messages
+      redirect_to '/users/signup'
     end
-    redirect_to '/events'
+    
   end
 
   def authenticate

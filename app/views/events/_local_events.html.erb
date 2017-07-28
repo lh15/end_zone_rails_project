@@ -8,7 +8,8 @@
     <% else %>
       <h1>Search results:</h1>
     <% end %> 
-  <% end %>    
+  <% end %>      
+   <%= @message %>
     <% @events.each do |event| %>
       <a href="/events/<%= event.id %>">
         <div class="col s12 m4 ">

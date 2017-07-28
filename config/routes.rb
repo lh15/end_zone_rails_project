@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   # *************************************************************
   # users routes
   # *************************************************************
-  get '/users/login' => 'users#new' #show login page
+  get '/users/signup' => 'users#new' #show login page
+  get '/users/login' => 'users#login' #show login page  
   get '/success' => 'users#show' #showing a success page to check if login/reg works
 
   post '/users' => 'users#create'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   get '/users/logout' => 'users#logout'
 
   post '/users/login' => 'users#authenticate'
+
 
   get '/users/show' => 'users#show' #show users upcoming events
 
