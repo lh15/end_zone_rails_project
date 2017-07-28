@@ -5,9 +5,14 @@ class EventsController < ApplicationController
     lon = params['lon']
     lat_lon = "#{params['lat']},#{params['lon']}"
     response = Geocoder.search(lat_lon).first
-    @state = response.state if response.present?
     @events = Event.includes(:venue).where('venues.state = ?', response.state).references(:venue)
-     
+    if @events[0].nil?
+      @notInState  =  "Sorry, your state is kinda pathetic. Consider a move. 🤖"
+      @state = nil
+    else
+      @state = response.state
+    end
+    @search = false
     puts @events.inspect
     render partial: 'local_events'
   end
@@ -20,6 +25,8 @@ class EventsController < ApplicationController
         @events = Event.search(params[:search])
         if @events == []
             @message = "Sorry, there are no events matching this search"
+        else
+            @search = true
         end     
         render partial: 'local_events'
     end

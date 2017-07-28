@@ -1,13 +1,17 @@
+<div class="container">
 <div class="row">
   <% if !!@state %>
     <h1>Here are events in <%= @state %></h1>
   <% else %>
+      <h1><%= @notInState %></h1>
+  <% end %>      
+  <% if @search %>
     <h1>Search results:</h1>
-  <% end %>   
+  <% end %> 
    <%= @message %>
     <% @events.each do |event| %>
       <a href="/events/<%= event.id %>">
-        <div class="col s12 m3 ">
+        <div class="col s12 m4 ">
           <div class="card">
             <div class="card-image">
               <img src="<%= event.performers[0].img_url %>" alt="" class="image_in_card">
@@ -24,4 +28,5 @@
         </div>
       </a>
       <% end %>
+  </div>
   </div>
