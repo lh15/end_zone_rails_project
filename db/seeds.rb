@@ -18,7 +18,7 @@ category1 = Category.create(category: "Sports")
 
 venue1 = Venue.create(name: "Guaranteed Rate Field", img_url: "http://www.ballparksofbaseball.com/wp-content/uploads/2016/03/uscell_topv2.jpg", city: "Chicago", state: "Illinois", country: "USA")
 
-event1 = Event.create(title: "Philosopher Soccer", date:Date.parse('31-10-2017'), description: "A battle of wits!", venue_id: 1, category_id: 1)
+event1 = Event.create(title: "Philosopher Soccer", date:DateTime.parse('3rd Oct 2017 08:00:00 PM' ), description: "A battle of wits!", venue_id: 1, category_id: 1)
 
 subcategory1 = SubCategory.create(sub_category:"Philosophy")
 
@@ -38,7 +38,7 @@ category2 = Category.create(category: "Concert")
 
 venue2 = Venue.create(name: "Madison Square Garden", img_url: "http://www.themadisonsquaregardencompany.com/content/dam/themadisonsquaregardencompany/brandsImg/brandsPageImg/MSG_120413_156W.jpg", city: "New York ", state: "New York", country: "USA")
 
-event2 = Event.create(title: "A Thousand Angry Kazoos", date:Date.parse('09-10-2017'), description: "Have you ever wanted to hear a thousand angry kazoos?", venue_id: 2, category_id: 2)
+event2 = Event.create(title: "A Thousand Angry Kazoos", date:DateTime.parse('13th Oct 2017 09:00:00 PM' ), description: "Have you ever wanted to hear a thousand angry kazoos?", venue_id: 2, category_id: 2)
 
 subcategory2 = SubCategory.create(sub_category:"DubStep")
 
@@ -56,7 +56,7 @@ category3 = Category.create(category: "Theatre/Comedy")
 
 venue3 = Venue.create(name: "Hollywood Bowl", img_url: "https://i.gse.io/gse_media/114/6/1406312149-venue-hollywoodbowl.jpg?p=1", city: "Los Angeles", state: "California", country: "USA")
 
-event3 = Event.create(title: "Mystery Science Theatre 3000 Live!", date:Date.parse('05-11-2018'), description: "Come and see MST3K Live!", venue_id: 3, category_id: 3)
+event3 = Event.create(title: "Mystery Science Theatre 3000 Live!", date:DateTime.parse('23rd Oct 2017 08:00:00 PM' ), description: "Come and see MST3K Live!", venue_id: 3, category_id: 3)
 
 subcategory3 = SubCategory.create(sub_category:"Comedy")
 
@@ -70,7 +70,7 @@ events_performer6 = EventsPerformer.create(performer_id: 6, event_id: 3)
 
 #--------------------------------------------------------------------------------------------
 
-event4 = Event.create(title: "Banana Phone: Realm of Chaos Tour", date:Date.parse('01-8-2017'), description: "Come and see the triumphant return of the DEATH METAL Banana Phone!", venue_id: 2, category_id: 2)
+event4 = Event.create(title: "Banana Phone: Realm of Chaos Tour", date:DateTime.parse('31st Oct 2017 08:00:00 PM' ), description: "Come and see the triumphant return of the DEATH METAL Banana Phone!", venue_id: 2, category_id: 2)
 
 subcategory4 = SubCategory.create(sub_category:"Death Metal for Kidz")
 
@@ -81,7 +81,7 @@ ticket4 = Ticket.create(price:"40.00", seat_number:"1", section:"A", event_id: 4
 events_performer7 = EventsPerformer.create(performer_id: 7, event_id: 4)
 
 #--------------------------------------------------------------------------------------------
-event5 = Event.create(title: "Election 2016: The Musical", date:Date.parse('01-8-2017'), description: "Nominated for zero Tony awards! Make sure to see it quick, opening night might also be closing night!", venue_id: 3, category_id: 3)
+event5 = Event.create(title: "Election 2016: The Musical", date:DateTime.parse('1st Oct 2017 10:00:00 PM' ), description: "Nominated for zero Tony awards! Make sure to see it quick, opening night might also be closing night!", venue_id: 3, category_id: 3)
 
 subcategory5 = SubCategory.create(sub_category:"Musical/Theater")
 
@@ -96,7 +96,7 @@ events_performer9 = EventsPerformer.create(performer_id: 9, event_id: 5)
 events_performer10 = EventsPerformer.create(performer_id: 10, event_id: 5)
 
 #--------------------------------------------------------------------------------------------
-event6 = Event.create(title: "Calvinball 2017 World Championship", date:Date.parse('01-8-2017'), description: "Championship of the worlds greatest no-rules game!", venue_id: 1, category_id: 1)
+event6 = Event.create(title: "Calvinball 2017 World Championship", date:DateTime.parse('11th Oct 2017 10:00:00 PM' ), description: "Championship of the worlds greatest no-rules game!", venue_id: 1, category_id: 1)
 
 subcategory5 = SubCategory.create(sub_category:"CalvinBall")
 
