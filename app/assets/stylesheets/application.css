@@ -226,3 +226,9 @@ input {
 body {
   background-color: #F6F8F9;
 }
+#profilepage {
+  margin: 100px;
+}
+#cartpage {
+  margin: 100px;
+}

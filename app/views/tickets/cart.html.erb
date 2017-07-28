@@ -1,5 +1,4 @@
 <div class = "container">
-<a href="/events">Back to Events</a>
 <% session[:cart].each do |item| %>
     <% @tickets << Ticket.find(item) %>
 <% end %>
