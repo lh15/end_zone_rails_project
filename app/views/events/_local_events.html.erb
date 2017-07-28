@@ -11,7 +11,7 @@
    <%= @message %>
     <% @events.each do |event| %>
       <a href="/events/<%= event.id %>">
-        <div class="col s12 m4 ">
+        <div class="col s12 m3 ">
           <div class="card">
             <div class="card-image">
               <img src="<%= event.performers[0].img_url %>" alt="" class="image_in_card">

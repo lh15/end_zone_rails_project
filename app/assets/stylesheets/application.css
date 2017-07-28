@@ -63,7 +63,16 @@ nav {
   /* display: inline-block; */
   /* align-content: center; */
 }
-
+#submitbutton {
+  background-color: #D94185;
+  color: white;
+  width: 10%;
+  height: 45px;
+  text-align: center;
+  font-size: 25px;
+  padding: 12px;
+  border: none;
+} 
 #tag {
   color: rgb(66, 103, 178);
 }
