@@ -18,7 +18,9 @@ class EventsController < ApplicationController
 
     def search
         @events = Event.search(params[:search])
-        puts @events.inspect
+        if @events == []
+            @message = "Sorry, there are no events matching this search"
+        end     
         render partial: 'local_events'
     end
     

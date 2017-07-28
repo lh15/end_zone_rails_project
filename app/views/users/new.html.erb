@@ -1,53 +1,21 @@
-<% if flash[:errors] %>
-  <% flash[:errors].each do |error| %>
-    <p style="color:red; font-size: 12px;">
-      <%= error %>
-    </p>
-    <% end %>
-      <% end %>
-        <br><br>
 
 
 
-        <h1>Please <a href="#modal_login">Login</a> or go to <a href="/events">Events</a></h1>
-        <!-- Modal Structure -->
-        <div id="modal_login" class="modal">
-          <div class="container">
 
-            <form action="/users/login" method="post" id="login">
-              <p>Sign In</p>
-              <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="email" type="email" name="user[email]" class="validate">
-                  <label for="email">Email</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="password" type="password" name="user[password]" class="validate">
-                  <label for="password">Password</label>
-                </div>
-              </div>
-              <input id="signupbutton" type="submit" value="Sign in"><br>
-              <a href="http://www.facebook.com" target="_blank">
-                <p id="facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i> Sign in with facebook</p>
-              </a>
-              <a id="tag" href=""> Forgot your password? </a>
-              <p>New to EndZone? <span style="color: rgb(66, 103, 178)"> <a href="" id="signUpLink">Sign Up</a></span> </p>
-            </form>
-
-          </div>
-
-
-
-          <br>
-        </div>
+       
 
         <!-- Modal Structure -->
         <div id="modal_reg" class="modal">
           <div class="container">
             <p>Sign up, Pay up, Get out </p>
+              <% if flash[:errors] %>
+                 <% flash[:errors].each do |error| %>
+                <p style="color:red; font-size: 12px;">
+                 <%= error %>
+            </p>
+               <% end %>
+             <% end %>
+            <br>            
             <a href="http://www.facebook.com" target="_blank">
               <p id="facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i> Sign up with facebook</p>
             </a>
@@ -104,7 +72,7 @@
             </div>
             <p> By signing up, you agree to our <span style="color: rgb(66, 103, 178)"> user agreement </span> and <span style="color: rgb(66, 103, 178)"> privacy notice</span>.
             </p>
-            <p>Have an account with EndZone? <span style="color: rgb(66, 103, 178)"> Sign in </span> </p>
+            <p>Have an account with EndZone? <span style="color: rgb(66, 103, 178)"> <a href="/users/login">Sign in</a> </span> </p>
             <p> Get seats you'll hate, anytime </p>
             <br>
           </div>
@@ -116,12 +84,6 @@
 
         <script>
           $(document).ready(function () {
-            $('#modal_login').modal('open');
-
-            $("#signUpLink").click(function (e) {
-              e.preventDefault();
-              $('#modal_login').modal('close');
-              $('#modal_reg').modal('open');
-            });
+            $('#modal_reg').modal('open');
           });
         </script>

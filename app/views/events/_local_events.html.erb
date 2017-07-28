@@ -3,7 +3,8 @@
     <h1>Here are events in <%= @state %></h1>
   <% else %>
     <h1>Search results:</h1>
-  <% end %>    
+  <% end %>   
+   <%= @message %>
     <% @events.each do |event| %>
       <a href="/events/<%= event.id %>">
         <div class="col s12 m3 ">
