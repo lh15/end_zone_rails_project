@@ -1,4 +1,8 @@
-<h2>Edit Listing</h2>
+<div class = "container">
+<h2><%= @ticket.event.title %></h2>
+<h4><%= @ticket.event.date.strftime("%B %d, %Y") %><br>
+<%= @ticket.event.venue.name %><br>
+<%= @ticket.event.venue.city %>, <%= @ticket.event.venue.state %></h4>
 <a href='/tickets/<%= @ticket.id %>' data-method='delete'>Delete this listing</a><br>
 
 <form action="/tickets/<%= @ticket.id %>" method="POST">
@@ -9,7 +13,7 @@
   <input type="number" name="seat_number" value="<%= @ticket.seat_number %>"><br>
   <label>Section:</label>
   <input type="text" name="section" value="<%= @ticket.section %>"><br>
-  <button type="submit">Update Listing</button>
+  <button type="submit" class="submitbutton">Update</button>
 </form>
 <br>
 <% if flash[:errors] %>
@@ -19,3 +23,4 @@
     </p>
     <% end %>
       <% end %><br>
+</div>      

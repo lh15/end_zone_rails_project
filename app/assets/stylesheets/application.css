@@ -63,6 +63,24 @@ nav {
   /* display: inline-block; */
   /* align-content: center; */
 }
+.submitbutton {
+  background-color: #D94185;
+  color: white;
+  width: 10%;
+  height: 45px;
+  text-align: center;
+  font-size: 25px;
+  padding: 12px;
+  border: none;
+} 
+
+.column{
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+  margin-right: 80px;
+  margin-left: 25px;
+}
 #submitbutton {
   background-color: #D94185;
   color: white;

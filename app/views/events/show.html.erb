@@ -1,24 +1,27 @@
 <img src="<%= @event.venue.img_url %>" class="banner_img3">
-<h1>
-  <%= @event.title %>
-</h1>
-<h3>
-  <%= @event.date.strftime("%A, %B %d, %Y") %>
-</h3>
-<h3>
-  <%= @event.venue.name %>
-</h3>
+<div class="container">
+  <h1>
+    <%= @event.title %>
+  </h1>
+  <h3>
+    <%= @event.date.strftime("%A, %B %d, %Y") %>
+  </h3>
+  <h3>
+    <%= @event.venue.name %>
+  </h3>
 
   <div class="row">
     <% @event.performers.each do |performer| %>
-      <div class="col s12 m3 ">
+      <div class="col s12 m3">
         <div class="card">
           <div class="card-image">
             <img src="<%= performer.img_url %>" alt="" class="image_in_card">
           </div>
           <div class="card-content">
             <p>
-              <%= performer.name %>
+              <a href='/performers/<%= performer.id %>'>
+                <%= performer.name %>
+              </a>
             </p>
           </div>
         </div>
@@ -26,30 +29,31 @@
       <% end %>
   </div>
 
-<br>
-<h2>Tickets</h2>
-<ul>
-  <form action="/events/<%= @event.id %>/tickets/cart" method="POST">
-    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
-    <% if !!@tickets[0] %>
-      <% @tickets.each do |ticket| %>
-        <li>
-          Seat:
-          <%= ticket.seat_number %>
-            <%= ticket.section %><br> $
-              <%= '%.2f' % ticket.price %><br>
-                <input type="checkbox" id="<%= ticket.id %>" name="selected_ticket[]" value="<%= ticket.id %>" />
-                <label for="<%= ticket.id %>">Select</label>
-                <!-- <input type="checkbox" name="selected_ticket[]" value="<%= ticket.id %>"> -->
-        </li>
-        <% end %>
-          <button type="submit">Add to Cart</button>
-          <% else %>
-            <p> Sorry, no tickets available for this event!</p>
-            <% end %>
+  <br>
+  <h2>Tickets</h2>
+  <ul>
+    <form action="/events/<%= @event.id %>/tickets/cart" method="POST">
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
+      <% if !!@tickets[0] %>
+        <% @tickets.each do |ticket| %>
+          <li>
+            Seat:
+            <%= ticket.seat_number %>
+              <%= ticket.section %><br> $
+                <%= '%.2f' % ticket.price %><br>
+                  <input type="checkbox" id="<%= ticket.id %>" name="selected_ticket[]" value="<%= ticket.id %>" />
+                  <label for="<%= ticket.id %>">Select</label><br>
+                  <!-- <input type="checkbox" name="selected_ticket[]" value="<%= ticket.id %>"> -->
+          </li>
+          <% end %>
+            <button type="submit" class="submitbutton">Add to Cart</button>
+            <% else %>
+              <p> Sorry, no tickets available for this event!</p>
+              <% end %>
 
-  </form>
-</ul>
+    </form>
+  </ul>
+</div>
 </div>
 
 

@@ -1,0 +1,26 @@
+<div class="container"> <h1>
+    <%= @performer.name %>
+        </h1>
+        <div class="row">
+            <div class="col s12 m3">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="<%= @performer.img_url %>" alt="" class="image_in_card">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>Upcoming events</h3>
+        <ul style: "list-style-type:none">
+            <% @events.each do |event| %>
+                <li>
+                    <% event_each = Event.find(event.event_id) %>
+                        <a href='/events/<%=event_each.id%>'>
+                            <%= event_each.title %>
+                        </a><br>
+                        <%= event_each.date.strftime("%B %d, %Y") %><br>
+                            <%= event_each.venue.city %>
+                </li><br>
+                <% end %>
+        </ul>
+</div>

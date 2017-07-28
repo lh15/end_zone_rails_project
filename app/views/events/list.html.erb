@@ -11,7 +11,9 @@
             </div>
             <div class="card-content">
               <p>
-                <%= event.title %>
+                <%= event.title %><br>                
+                <%= event.date.strftime("%B %d, %Y") %><br>
+                <%= event.venue.city %>
               </p>
             </div>
           </div>

@@ -1,3 +1,4 @@
+<div class = "container">
 <a href="/events">Back to Events</a>
 <% session[:cart].each do |item| %>
     <% @tickets << Ticket.find(item) %>
@@ -19,8 +20,9 @@
 <% if !!session[:cart][0] %>
 Total: $<%= '%.2f' % @total %><br>
 <form action="/charges/new">
-    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary" id="submitbutton">
     <input type="hidden" name="total" value="<%= @total %>">
-    <button type="submit" id="submitbutton">Checkout</button>
+    <button type="submit" class="submitbutton">Checkout</button>
 </form>
 <% end %>
+</div>
