@@ -21,6 +21,6 @@ Total: $<%= '%.2f' % @total %><br>
 <form action="/charges/new">
     <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" class="input is-primary">
     <input type="hidden" name="total" value="<%= @total %>">
-    <input type="submit" value="Checkout"/>
+    <button type="submit" id="submitbutton">Checkout</button>
 </form>
 <% end %>
