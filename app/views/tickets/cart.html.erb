@@ -1,4 +1,4 @@
-<a href="/events">Back to Events</a>
+<div id="cartpage">
 <% session[:cart].each do |item| %>
     <% @tickets << Ticket.find(item) %>
 <% end %>
@@ -24,3 +24,4 @@ Total: $<%= '%.2f' % @total %><br>
     <input type="submit" value="Checkout"/>
 </form>
 <% end %>
+</div>
