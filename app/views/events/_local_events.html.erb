@@ -3,12 +3,11 @@
   <% if !!@state %>
     <h1>Here are events in <%= @state %></h1>
   <% else %>
-    <% if @state.nil? %>
       <h1><%= @notInState %></h1>
-    <% else %>
-      <h1>Search results:</h1>
-    <% end %> 
   <% end %>      
+  <% if @search %>
+    <h1>Search results:</h1>
+  <% end %> 
    <%= @message %>
     <% @events.each do |event| %>
       <a href="/events/<%= event.id %>">
