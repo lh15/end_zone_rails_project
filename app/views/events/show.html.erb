@@ -44,9 +44,9 @@
                   <input type="checkbox" id="<%= ticket.id %>" name="selected_ticket[]" value="<%= ticket.id %>" />
                   <label for="<%= ticket.id %>">Select</label><br>
                   <!-- <input type="checkbox" name="selected_ticket[]" value="<%= ticket.id %>"> -->
-          </li>
+          </li><br>
           <% end %>
-            <button type="submit" class="submitbutton">Add to Cart</button>
+            <button type="submit" id="submitbutton">Add to Cart</button>
             <% else %>
               <p> Sorry, no tickets available for this event!</p>
               <% end %>

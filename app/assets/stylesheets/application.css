@@ -87,10 +87,11 @@ nav {
   width: 10%;
   height: 45px;
   text-align: center;
-  font-size: 25px;
+  font-size: 16px;
   padding: 12px;
   border: none;
 } 
+
 #tag {
   color: rgb(66, 103, 178);
 }
