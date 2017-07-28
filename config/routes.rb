@@ -30,8 +30,11 @@ Rails.application.routes.draw do
   get '/events/newyork' => 'events#newyork'
   get '/events/chicago' => 'events#chicago'
   get '/events/losangeles' => 'events#losangeles'
+  get '/events/newyork/list' => 'events#newyorklist'
+  get '/events/chicago/list' => 'events#chicagolist'
+  get '/events/losangeles/list' => 'events#losangeleslist'  
   get '/events/:id' => 'events#show'     #show single event and its tickets
-  
+  get '/events/:id/list' => 'events#eventlist'
   #  
 
   # *************************************************************

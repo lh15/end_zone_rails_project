@@ -32,7 +32,13 @@
       <li><a href="/events/chicago">Chicago</a></li>
       <li class="divider"></li>
       <li><a href="/events/losangeles">Los Angeles</a></li>
-
+    </ul>
+    <ul id="dropdown4" class="dropdown-content">
+      <li><a href="/events/newyork/list">New York</a></li>
+      <li class="divider"></li>
+      <li><a href="/events/chicago/list">Chicago</a></li>
+      <li class="divider"></li>
+      <li><a href="/events/losangeles/list">Los Angeles</a></li>
     </ul>
     <ul id="dropdown2" class="dropdown-content">
       <li><a href="/users/show">Orders</a></li>
@@ -61,7 +67,7 @@
         <ul class=" right hide-on-med-and-down">
           <!-- Dropdown Trigger -->
           <li><a class="dropdown-button" href="" data-activates="dropdown1">Find events<i class="material-icons right">arrow_drop_down</i></a></li>
-          <li><a class="dropdown-button" href="">Sell tickets</a></li>
+          <li><a class="dropdown-button" href="" data-activates="dropdown4">Sell tickets<i class="material-icons right">arrow_drop_down</i></a></li>
           <li><a class="dropdown-button" href="" data-activates="dropdown2">My tickets<i class="material-icons right">arrow_drop_down</i></a></li>
           <!-- Dropdown Trigger -->
           <% if logged_in? %>

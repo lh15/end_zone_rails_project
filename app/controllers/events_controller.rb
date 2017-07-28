@@ -63,7 +63,30 @@ class EventsController < ApplicationController
         venues = Venue.where(city:"Los Angeles")
         @events = Event.where(venue:venues)
         render 'categories'
-    end    
+    end
+    def newyorklist
+        @category = "Events in New York"
+        venues = Venue.where(city:"New York ")
+        @events = Event.where(venue:venues)
+        render 'list'
+    end 
+    
+    def chicagolist
+        @category = "Events in Chicago"        
+        venues = Venue.where(city:"Chicago")
+        @events = Event.where(venue:venues)
+        render 'list'
+    end   
+    def losangeleslist
+        @category = "Events in Los Angeles"        
+        venues = Venue.where(city:"Los Angeles")
+        @events = Event.where(venue:venues)
+        render 'list'
+    end  
+    def eventlist
+        @event = Event.find(params[:id])  
+        render 'eventlist'   
+    end            
 end      
 
 

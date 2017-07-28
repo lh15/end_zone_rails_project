@@ -1,5 +1,7 @@
 class Ticket < ApplicationRecord
-    belongs_to :event
+  validates :price, :seat_number, :section, presence: true
+  validates :seat_number, uniqueness: { scope: [:event, :section] }
+  belongs_to :event
   belongs_to :seller,
     class_name: 'User', 
     foreign_key: 'seller_id'
